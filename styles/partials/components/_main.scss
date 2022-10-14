@@ -1,2 +1,66 @@
 @use "../breakpoints" as breakpoint;
 @use "../colors" as color;
+
+.main-container {
+  padding: 0 16px;
+  //   width: 100vw;
+  //   margin: -3px;
+}
+
+.article {
+  //   padding: 0 16px;
+}
+
+.article__picture-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.article__title {
+  margin: 0;
+  padding: 24px 0 16px;
+}
+
+.article__quote {
+  margin: 0;
+  padding-top: 16px;
+}
+.article__quote-credits {
+  margin: 0;
+  padding-top: 16px;
+}
+
+.article__text-area {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.article__subtitle {
+  margin: 0;
+  padding-top: 24px;
+}
+
+.article__text {
+  margin: 0;
+  padding-bottom: 16px;
+}
+
+.photo-gallery {
+  //   background-color: black;
+  background-color: color.$alabaster;
+  padding-top: 24px;
+  //   padding: 24px 16px 16px 16px;
+  //   width: 100vw;
+}
+
+.photo-gallery__title {
+  margin: 0;
+  padding-bottom: 16px;
+}
+
+.photo-gallery__photos {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
