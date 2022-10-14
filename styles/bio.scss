@@ -1,0 +1,15 @@
+@use "./partials/fonts";
+@use "./partials/components/header";
+
+html,
+body {
+  margin: 0;
+  font-family: "AvenirNextLTPro";
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
