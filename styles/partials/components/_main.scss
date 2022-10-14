@@ -1,14 +1,77 @@
 @use "../breakpoints" as breakpoint;
 @use "../colors" as color;
 
-.main-container {
-  padding: 0 16px;
-  //   width: 100vw;
-  //   margin: -3px;
-}
+// .main-container {
+//   //   padding: 0 16px;
+//   //   width: 100vw;
+//   //   margin: -3px;
+// }
+
+// .article {
+//   padding: 0 16px;
+//   @include breakpoint.medium {
+//     padding: 0 36px;
+//   }
+// }
+
+// .article__picture-area {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .article__title {
+//   margin: 0;
+//   padding: 24px 0 16px;
+//   font-size: 24px;
+//   line-height: 32px;
+//   font-weight: 700;
+// }
+
+// .article__quote {
+//   margin: 0;
+//   padding-top: 16px;
+//   font-size: 14px;
+//   line-height: 22px;
+//   font-weight: 700;
+// }
+// .article__quote-credits {
+//   margin: 0;
+//   font-size: 14px;
+//   line-height: 22px;
+//   font-weight: 700;
+//   //   padding-top: 16px;
+// }
+
+// .article__text-area {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   font-size: 13px;
+//   line-height: 18px;
+//   font-weight: 400;
+// }
+
+// .article__subtitle {
+//   margin: 0;
+//   padding-top: 24px;
+//   padding-bottom: 16px;
+//   font-size: 14px;
+//   line-height: 22px;
+//   font-weight: 600;
+// }
+
+// .article__text {
+//   margin: 0;
+//   padding-bottom: 16px;
+// }
+
+// START HERE
 
 .article {
-  //   padding: 0 16px;
+  padding: 24px 16px 16px;
+  @include breakpoint.medium {
+    padding: 48px 36px 36px;
+  }
 }
 
 .article__picture-area {
@@ -18,49 +81,115 @@
 
 .article__title {
   margin: 0;
-  padding: 24px 0 16px;
+  padding-bottom: 16px;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  @include breakpoint.medium {
+    padding-bottom: 36px;
+    font-size: 36px;
+    line-height: 44px;
+  }
 }
 
 .article__quote {
   margin: 0;
   padding-top: 16px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  @include breakpoint.medium {
+    padding-top: 24px;
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
 .article__quote-credits {
   margin: 0;
-  padding-top: 16px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  @include breakpoint.medium {
+    padding-top: 16px;
+  }
 }
 
 .article__text-area {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
 }
 
 .article__subtitle {
   margin: 0;
   padding-top: 24px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+
+  @include breakpoint.medium {
+    padding-top: 36px;
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
 
 .article__text {
   margin: 0;
-  padding-bottom: 16px;
+  padding-top: 16px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  @include breakpoint.medium {
+    padding-top: 24px;
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
 
 .photo-gallery {
-  //   background-color: black;
-  background-color: color.$alabaster;
-  padding-top: 24px;
-  //   padding: 24px 16px 16px 16px;
+  background-color: green;
+  //   background-color: color.$alabaster;
+  //   padding-top: 24px;
+  padding: 24px 16px 16px;
+  @include breakpoint.medium {
+    padding: 48px 36px 36px;
+  }
+  //   width: 100vw;
+}
+
+.photo-gallery {
+  background-color: green;
+  //   background-color: color.$alabaster;
+  //   padding-top: 24px;
+  padding: 24px 16px 16px;
+  @include breakpoint.medium {
+    padding: 48px 36px 36px;
+  }
   //   width: 100vw;
 }
 
 .photo-gallery__title {
   margin: 0;
   padding-bottom: 16px;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  @include breakpoint.medium {
+    padding-bottom: 36px;
+    font-size: 36px;
+    line-height: 44px;
+  }
 }
 
 .photo-gallery__photos {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  @include breakpoint.medium {
+    gap: 24px;
+  }
 }

@@ -148,8 +148,13 @@
   }
 }
 
-.main-container {
-  padding: 0 16px;
+.article {
+  padding: 24px 16px 16px;
+}
+@media only screen and (min-width: 768px) {
+  .article {
+    padding: 48px 36px 36px;
+  }
 }
 
 .article__picture-area {
@@ -159,49 +164,129 @@
 
 .article__title {
   margin: 0;
-  padding: 24px 0 16px;
+  padding-bottom: 16px;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+@media only screen and (min-width: 768px) {
+  .article__title {
+    padding-bottom: 36px;
+    font-size: 36px;
+    line-height: 44px;
+  }
 }
 
 .article__quote {
   margin: 0;
   padding-top: 16px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+}
+@media only screen and (min-width: 768px) {
+  .article__quote {
+    padding-top: 24px;
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
 
 .article__quote-credits {
   margin: 0;
-  padding-top: 16px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+}
+@media only screen and (min-width: 768px) {
+  .article__quote-credits {
+    padding-top: 16px;
+  }
 }
 
 .article__text-area {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
 }
 
 .article__subtitle {
   margin: 0;
   padding-top: 24px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+}
+@media only screen and (min-width: 768px) {
+  .article__subtitle {
+    padding-top: 36px;
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
 
 .article__text {
   margin: 0;
-  padding-bottom: 16px;
+  padding-top: 16px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+}
+@media only screen and (min-width: 768px) {
+  .article__text {
+    padding-top: 24px;
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
 
 .photo-gallery {
-  background-color: #fafafa;
-  padding-top: 24px;
+  background-color: green;
+  padding: 24px 16px 16px;
+}
+@media only screen and (min-width: 768px) {
+  .photo-gallery {
+    padding: 48px 36px 36px;
+  }
+}
+
+.photo-gallery {
+  background-color: green;
+  padding: 24px 16px 16px;
+}
+@media only screen and (min-width: 768px) {
+  .photo-gallery {
+    padding: 48px 36px 36px;
+  }
 }
 
 .photo-gallery__title {
   margin: 0;
   padding-bottom: 16px;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+@media only screen and (min-width: 768px) {
+  .photo-gallery__title {
+    padding-bottom: 36px;
+    font-size: 36px;
+    line-height: 44px;
+  }
 }
 
 .photo-gallery__photos {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+@media only screen and (min-width: 768px) {
+  .photo-gallery__photos {
+    gap: 24px;
+  }
 }
 
 html,
