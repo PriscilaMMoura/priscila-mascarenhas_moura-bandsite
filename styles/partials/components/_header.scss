@@ -4,29 +4,21 @@
 /* styles for header for mobile */
 
 // .header-container {
-//   // background-color: color.$bs-black;
-//   position: absolute;
 // }
 
-.nav-bar-container {
-  background-color: color.$bs-black;
-  width: 100vw;
-  height: auto;
-  @include breakpoint.large {
+@include breakpoint.large {
+  .nav-bar-container {
+    background-color: color.$bs-black;
+    width: 100vw;
     height: 68px;
-    position: relative;
-    z-index: 9999;
   }
 }
 
 .nav-bar {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  z-index: 9999;
   width: 100vw;
   background-color: color.$bs-black;
-  // position: fixed;
 
   @include breakpoint.medium {
     display: flex;
@@ -35,12 +27,10 @@
     padding: 0 36px;
   }
   @include breakpoint.large {
-    // margin: 0 auto;
     margin-left: auto;
     margin-right: auto;
     max-width: 1208px;
     padding: 0;
-    position: relative;
   }
 
   &__logo {
@@ -92,8 +82,6 @@
   &__list-item--current-page {
     border-bottom: 3px solid color.$white;
     font-weight: 700;
-    // min-width: auto;
-    // max-width: 100%;
   }
 
   &__list-item-link {
@@ -104,7 +92,9 @@
 
 .hero {
   width: 100vw;
-  height: 30vh;
+  min-height: 35vh;
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(
       to bottom,
       rgba(color.$bs-black, 0.5),
@@ -113,31 +103,20 @@
     url(../../../assets/images/hero-bio.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  top: 85px;
-
+  background-position: center right;
   @include breakpoint.medium {
-    width: 100vw;
-    height: 45vh;
-    top: 25px;
+    min-height: 45vh;
   }
 
   @include breakpoint.large {
-    width: 100vw;
-    height: 75vh;
-    top: -60px;
+    min-height: 55vh;
   }
-
-  // &__title-container {
-  // }
 
   &__title {
     color: color.$white;
     margin: auto 16px;
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 24px;
+    line-height: 32px;
     font-weight: 600;
 
     @include breakpoint.medium {
@@ -149,8 +128,6 @@
 
     @include breakpoint.large {
       margin: auto;
-      // font-size: 60px;
-      // font-weight: 600;
       padding-right: 769px;
       max-width: 1208px;
     }

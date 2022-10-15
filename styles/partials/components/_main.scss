@@ -1,0 +1,162 @@
+@use "../breakpoints" as breakpoint;
+@use "../colors" as color;
+
+.article {
+  padding: 24px 16px 16px;
+  @include breakpoint.medium {
+    padding: 48px 36px 36px;
+  }
+}
+
+.article__picture-area {
+  display: flex;
+  flex-direction: column;
+  @include breakpoint.medium {
+    padding: 0 56px;
+  }
+}
+
+.article__title {
+  margin: 0;
+  padding-bottom: 16px;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  @include breakpoint.medium {
+    padding-bottom: 36px;
+    font-size: 32px;
+    line-height: 44px;
+  }
+}
+
+.article__quote {
+  margin: 0;
+  padding-top: 16px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  @include breakpoint.medium {
+    padding-top: 24px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+.article__quote-credits {
+  margin: 0;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  @include breakpoint.medium {
+    padding-top: 16px;
+  }
+}
+
+.article__text-area {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  @include breakpoint.medium {
+    padding: 0 56px;
+  }
+}
+
+.article__subtitle {
+  margin: 0;
+  padding-top: 24px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+
+  @include breakpoint.medium {
+    padding-top: 36px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.paragraphs-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  @include breakpoint.medium {
+    flex-wrap: nowrap;
+    gap: 24px;
+  }
+}
+
+.article__text {
+  margin: 0;
+  padding-top: 16px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  @include breakpoint.medium {
+    padding-top: 24px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+.photo-gallery {
+  // background-color: green;
+  background-color: color.$alabaster;
+  padding: 24px 16px 16px;
+  @include breakpoint.medium {
+    padding: 48px 0 36px;
+  }
+}
+
+.photo-gallery__title {
+  margin: 0;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  padding-bottom: 16px;
+  @include breakpoint.medium {
+    font-size: 36px;
+    line-height: 44px;
+    padding: 0 36px 36px 36px;
+  }
+}
+
+.photo-gallery__photos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  @include breakpoint.medium {
+    gap: 24px;
+    padding-bottom: 0;
+  }
+}
+
+.photo-gallery__image {
+  display: inline-block;
+  @include breakpoint.medium {
+    display: inline-block;
+    min-width: 25%;
+    height: auto;
+  }
+}
+
+@include breakpoint.medium {
+  .photo-gallery__image--left-column {
+    margin-left: 36px;
+  }
+  .photo-gallery__image--mid-column {
+    margin: 0 24px;
+  }
+  .photo-gallery__image--right-column {
+    margin-right: 36px;
+  }
+}
+
+.photo-gallery__flow-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  @include breakpoint.medium {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+}
