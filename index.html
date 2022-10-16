@@ -13,19 +13,24 @@
         <div class="header-container">
           <div class="nav-bar-container">
             <nav class="nav-bar">
-              <img
-                class="nav-bar__logo"
-                src="./assets/logos/Logo-bandsite.svg"
-                alt="band site logo"
-              />
+              <a class="nav-bar__logo" href="/index.html">
+                <img
+                  src="./assets/logos/Logo-bandsite.svg"
+                  alt="band site logo"
+              /></a>
 
               <ul class="nav-bar__list">
-                <li class="nav-bar__list-item nav-bar__list-item--current-page">
-                  <a class="nav-bar__list-item-link" href=""> Biography </a>
-                </li>
-                <li class="nav-bar__list-item">
-                  <a class="nav-bar__list-item-link" href="">Shows</a>
-                </li>
+                <a
+                  class="nav-bar__list-item nav-bar__list-item--current-page"
+                  href="#bio"
+                  ><li class="">Biography</li></a
+                >
+                <a
+                  class="nav-bar__list-item nav-bar__list-item--inactive-page"
+                  href=""
+                >
+                  <li class="">Shows</li></a
+                >
               </ul>
             </nav>
           </div>
@@ -40,7 +45,7 @@
       <main>
         <div class="main-container">
           <section class="article">
-            <h4 class="article__title">About the Musicians</h4>
+            <h4 class="article__title" id="bio">About the Musicians</h4>
             <div class="article__picture-area">
               <img
                 class="article__picture"

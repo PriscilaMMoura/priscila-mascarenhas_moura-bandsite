@@ -1,6 +1,11 @@
 @use "../breakpoints" as breakpoint;
 @use "../colors" as color;
 
+.main-container {
+  background-color: color.$white;
+  max-width: 100vw;
+}
+
 .article {
   padding: 24px 16px 16px;
   @include breakpoint.medium {
@@ -28,6 +33,7 @@
     font-size: 24px;
     line-height: 32px;
     font-weight: 700;
+    color: color.$bs-black;
     @include breakpoint.medium {
       padding-bottom: 36px;
       font-size: 32px;
@@ -41,6 +47,7 @@
     font-size: 14px;
     line-height: 22px;
     font-weight: 600;
+    color: color.$bs-black;
     @include breakpoint.medium {
       padding-top: 24px;
       font-size: 24px;
@@ -53,6 +60,7 @@
     font-size: 14px;
     line-height: 22px;
     font-weight: 600;
+    color: color.$bs-black;
     @include breakpoint.medium {
       padding-top: 16px;
     }
@@ -62,6 +70,7 @@
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
+    color: color.$bs-black;
     @include breakpoint.medium {
       padding: 0 88px;
     }
@@ -73,7 +82,7 @@
     font-size: 14px;
     line-height: 22px;
     font-weight: 600;
-
+    color: color.$bs-black;
     @include breakpoint.medium {
       padding-top: 36px;
       font-size: 24px;
@@ -97,6 +106,7 @@
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
+    color: color.$bs-black;
     @include breakpoint.medium {
       padding-top: 24px;
       font-size: 14px;
@@ -129,6 +139,7 @@
     line-height: 32px;
     font-weight: 700;
     padding-bottom: 16px;
+    color: color.$bs-black;
     @include breakpoint.medium {
       font-size: 36px;
       line-height: 44px;

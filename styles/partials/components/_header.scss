@@ -61,11 +61,13 @@
 
   &__list-item {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 400;
     text-align: center;
     margin: 0;
     padding: 16px;
     width: 50vw;
+    text-decoration: none;
+    color: color.$mercury;
     //   line-height: 18px; /*not sure if it is correct*/
 
     @include breakpoint.medium {
@@ -77,11 +79,15 @@
   &__list-item--current-page {
     border-bottom: 3px solid color.$white;
     font-weight: 700;
+    font-weight: 700;
   }
 
-  &__list-item-link {
-    text-decoration: none;
-    color: color.$mercury;
+  &__list-item--inactive-page {
+    transition: color;
+    &:hover {
+      color: color.$white;
+      border-bottom: 3px solid color.$white;
+    }
   }
 }
 

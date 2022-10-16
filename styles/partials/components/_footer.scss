@@ -43,6 +43,7 @@ p {
   }
   &__social {
     margin-top: 16px;
+
     @include breakpoint.medium {
       margin: 0 32px;
     }
