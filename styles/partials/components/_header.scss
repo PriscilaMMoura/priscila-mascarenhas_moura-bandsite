@@ -3,22 +3,14 @@
 
 /* styles for header for mobile */
 
-// .header-container {
-// }
-
-@include breakpoint.large {
-  .nav-bar-container {
-    background-color: color.$bs-black;
-    width: 100vw;
-    height: 68px;
-  }
+.nav-bar-container {
+  background-color: color.$bs-black;
+  max-width: 100vw;
 }
 
 .nav-bar {
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  background-color: color.$bs-black;
 
   @include breakpoint.medium {
     display: flex;
@@ -65,34 +57,42 @@
   }
 
   &__list-item {
-    font-size: 14px;
-    font-weight: 600;
+    /*text styles: body copy*/
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    color: color.$mercury;
     text-align: center;
     margin: 0;
     padding: 16px;
     width: 50vw;
-    //   line-height: 18px; /*not sure if it is correct*/
+    text-decoration: none;
 
     @include breakpoint.medium {
+      font-size: 14px;
+      line-height: 22px;
       width: 100%;
       padding: 24px 0;
     }
   }
 
   &__list-item--current-page {
-    border-bottom: 3px solid color.$white;
     font-weight: 700;
+    border-bottom: 3px solid color.$white;
   }
 
-  &__list-item-link {
-    text-decoration: none;
-    color: color.$mercury;
+  &__list-item--inactive-page {
+    transition: all 0.2s;
+    &:hover {
+      color: color.$white;
+      border-bottom: 3px solid color.$white;
+    }
   }
 }
 
 .hero {
-  width: 100vw;
-  min-height: 35vh;
+  max-width: 100vw;
+  min-height: 55vw;
   display: flex;
   flex-direction: column;
   background: linear-gradient(
@@ -100,35 +100,28 @@
       rgba(color.$bs-black, 0.5),
       rgba(color.$bs-black, 0.5)
     ),
-    url(../../../assets/images/hero-bio.jpg);
+    url(../assets/images/hero-bio.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center right;
-  @include breakpoint.medium {
-    min-height: 45vh;
-  }
-
-  @include breakpoint.large {
-    min-height: 55vh;
-  }
 
   &__title {
-    color: color.$white;
-    margin: auto 16px;
+    /*text styles: page header*/
     font-size: 24px;
     line-height: 32px;
-    font-weight: 600;
-
+    font-weight: 700;
+    color: color.$white;
+    margin: auto 16px;
     @include breakpoint.medium {
-      margin: auto 36px;
       font-size: 60px;
       line-height: 68px;
-      // font-weight: 600;
+      font-weight: 700;
+      margin: auto 36px;
     }
 
     @include breakpoint.large {
       margin: auto;
-      padding-right: 769px;
+      padding-right: 752px;
       max-width: 1208px;
     }
   }

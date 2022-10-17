@@ -1,7 +1,9 @@
 /* Regular */
 @font-face {
   font-family: "AvenirNextLTPro";
-  src: url("../../assets/fonts/AvenirNextLTPro-regular.otf") format("opentype");
+  src: url("../assets/fonts/AvenirNextLTPro-regular.otf") format("opentype");
+  src: url("../assets/fonts/Alternative-files/AvenirNextLTPro-regular.ttf")
+    format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -9,7 +11,9 @@
 /* Semi Bold */
 @font-face {
   font-family: "AvenirNextLTPro";
-  src: url("../../assets/fonts/AvenirNextLTPro-demi.otf") format("opentype");
+  src: url("../assets/fonts/AvenirNextLTPro-demi.otf") format("opentype");
+  src: url("../assets/fonts/Alternative-files/AvenirNextLTPro-demi.ttf")
+    format("truetype");
   font-weight: 600;
   font-style: normal;
 }
@@ -17,7 +21,9 @@
 /* Bold */
 @font-face {
   font-family: "AvenirNextLTPro";
-  src: url("../../assets/fonts/AvenirNextLTPro-bold.otf") format("opentype");
+  src: url("../assets/fonts/AvenirNextLTPro-bold.otf") format("opentype");
+  src: url("../assets/fonts/Alternative-files/AvenirNextLTPro-bold.ttf")
+    format("truetype");
   font-weight: 700;
   font-style: normal;
 }

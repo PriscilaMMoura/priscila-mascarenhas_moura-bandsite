@@ -1,13 +1,24 @@
 @use "./partials/fonts";
 @use "./partials/components/header";
 @use "./partials/components/main";
+@use "./partials/components/footer";
+@use "./partials/breakpoints" as breakpoint;
 
 html,
 body {
   margin: 0;
   font-family: "AvenirNextLTPro";
   box-sizing: border-box;
-  overflow-x: hidden;
+}
+
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
 }
 
 *,
