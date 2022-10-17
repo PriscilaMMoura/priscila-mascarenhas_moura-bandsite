@@ -23,11 +23,11 @@
     display: flex;
     flex-direction: column;
     @include breakpoint.medium {
-      padding: 0 88px;
+      padding: 0 56px;
     }
   }
 
-  &__title {
+  &__section-header-text {
     margin: 0;
     padding-bottom: 16px;
     font-size: 24px;
@@ -36,53 +36,62 @@
     color: color.$bs-black;
     @include breakpoint.medium {
       padding-bottom: 36px;
-      font-size: 32px;
+      font-size: 36px;
       line-height: 44px;
     }
   }
 
-  &__quote {
-    margin: 0;
-    padding-top: 16px;
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 600;
-    color: color.$bs-black;
-    @include breakpoint.medium {
-      padding-top: 24px;
-      font-size: 24px;
-      line-height: 32px;
-    }
-  }
-
-  &__quote-credits {
-    margin: 0;
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 600;
-    color: color.$bs-black;
-    @include breakpoint.medium {
-      padding-top: 16px;
-    }
-  }
-
-  &__text-area {
+  &__body-copy-text {
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
     color: color.$bs-black;
     @include breakpoint.medium {
-      padding: 0 88px;
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    &--quote {
+      font-weight: 600;
+      margin: 0;
+      padding-top: 16px;
+      @include breakpoint.medium {
+        font-size: 24px;
+        line-height: 32px;
+        padding-top: 24px;
+      }
+    }
+    &--credits {
+      margin: 0;
+      font-weight: 600;
+      padding-top: 8px;
+      @include breakpoint.medium {
+        padding-top: 16px;
+      }
+    }
+
+    &--paragraphs {
+      margin: 0;
+      padding-top: 16px;
+      @include breakpoint.medium {
+        padding-top: 24px;
+      }
     }
   }
 
-  &__subtitle {
-    margin: 0;
-    padding-top: 24px;
+  &__text-area {
+    @include breakpoint.medium {
+      padding: 0 56px;
+    }
+  }
+
+  &__subheader-text {
     font-size: 14px;
     line-height: 22px;
     font-weight: 600;
     color: color.$bs-black;
+    margin: 0;
+    padding-top: 24px;
     @include breakpoint.medium {
       padding-top: 36px;
       font-size: 24px;
@@ -99,25 +108,10 @@
       gap: 24px;
     }
   }
-
-  &__text {
-    margin: 0;
-    padding-top: 16px;
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 400;
-    color: color.$bs-black;
-    @include breakpoint.medium {
-      padding-top: 24px;
-      font-size: 14px;
-      line-height: 22px;
-    }
-  }
 }
 
 .photo-gallery-container {
   background-color: color.$alabaster;
-  // background-color: green;
   max-width: 100vw;
 }
 .photo-gallery {
@@ -133,13 +127,13 @@
     max-width: 1208px;
   }
 
-  &__title {
-    margin: 0;
+  &__section-header-text {
     font-size: 24px;
     line-height: 32px;
     font-weight: 700;
-    padding-bottom: 16px;
     color: color.$bs-black;
+    margin: 0;
+    padding-bottom: 16px;
     @include breakpoint.medium {
       font-size: 36px;
       line-height: 44px;
@@ -174,6 +168,11 @@
 
   &__image {
     display: inline-block;
+    filter: grayscale(100%);
+    transition: all 0.2s;
+    &:hover {
+      filter: none;
+    }
     @include breakpoint.medium {
       min-width: 25%;
       height: auto;

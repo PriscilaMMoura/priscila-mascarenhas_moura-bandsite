@@ -30,8 +30,7 @@ p {
     align-items: center;
   }
 
-  &__title-text {
-    margin: 0;
+  &__section-header-text {
     font-size: 24px;
     line-height: 32px;
     font-weight: 700;
@@ -41,9 +40,9 @@ p {
       line-height: 44px;
     }
   }
+
   &__social {
     margin-top: 16px;
-
     @include breakpoint.medium {
       margin: 0 32px;
     }
@@ -86,44 +85,30 @@ p {
       }
     }
   }
-  &__titles {
-    margin: 0;
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 600;
-    color: color.$white;
-    @include breakpoint.medium {
-      font-size: 14px;
-      line-height: 20px;
-    }
-  }
-  &__location {
-    margin: 16px 0;
+
+  &__copy-text {
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
     color: color.$white;
     @include breakpoint.medium {
-      margin: 24px 0;
       font-size: 14px;
       line-height: 20px;
     }
-  }
-  &__email {
-    margin: 0;
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 400;
 
-    @include breakpoint.medium {
-      font-size: 14px;
-      line-height: 20px;
+    &--titles {
+      font-weight: 600;
     }
-  }
-
-  &__link {
-    color: color.$white;
-    text-decoration: none;
+    &--location {
+      margin: 16px 0;
+      @include breakpoint.medium {
+        margin: 24px 0;
+      }
+    }
+    &--link {
+      color: color.$white;
+      text-decoration: none;
+    }
   }
 }
 
@@ -139,7 +124,7 @@ p {
       display: none;
     }
   }
-  &__copyright {
+  &__lables-copyright {
     margin: 16px 0 0;
     font-size: 10px;
     line-height: 20px;
