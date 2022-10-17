@@ -11,14 +11,14 @@ p {
 }
 
 .footer-container {
-  margin: 24px 16px 16px;
+  margin: 1.5rem 1rem 1rem;
   @include breakpoint.medium {
-    margin: 48px 36px 36px;
+    margin: 3rem 2.25rem 2.25rem;
   }
   @include breakpoint.large {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1208px;
+    max-width: 75.5rem;
   }
 }
 
@@ -31,20 +31,20 @@ p {
   }
 
   &__section-header-text {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 2rem;
     font-weight: 700;
     color: color.$white;
     @include breakpoint.medium {
-      font-size: 36px;
-      line-height: 44px;
+      font-size: 2.25rem;
+      line-height: 2.75rem;
     }
   }
 
   &__social {
-    margin-top: 16px;
+    margin-top: 1rem;
     @include breakpoint.medium {
-      margin: 0 32px;
+      margin: 0 2rem;
     }
   }
 
@@ -52,9 +52,9 @@ p {
     width: auto;
     height: 25px;
     &--middle {
-      margin: 0 16px;
+      margin: 0 1rem;
       @include breakpoint.medium {
-        margin: 0 24px;
+        margin: 0 1.5rem;
       }
     }
   }
@@ -63,8 +63,8 @@ p {
     display: none;
     @include breakpoint.medium {
       display: inline-block;
-      max-height: 20px;
-      max-width: 120px;
+      max-height: 1.25rem;
+      max-width: 7.5rem;
       margin-left: auto;
     }
   }
@@ -77,32 +77,32 @@ p {
     flex-wrap: nowrap;
   }
   &__item {
-    padding: 16px 0;
+    padding: 1rem 0;
     @include breakpoint.medium {
-      padding: 24px 0;
+      padding: 1.5rem 0;
       &--middle {
-        margin: 0 56px;
+        margin: 0 3.5rem;
       }
     }
   }
 
   &__copy-text {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 0.813rem;
+    line-height: 1.125rem;
     font-weight: 400;
     color: color.$white;
     @include breakpoint.medium {
-      font-size: 14px;
-      line-height: 20px;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
     }
 
     &--titles {
       font-weight: 600;
     }
     &--location {
-      margin: 16px 0;
+      margin: 1rem 0;
       @include breakpoint.medium {
-        margin: 24px 0;
+        margin: 1.5rem 0;
       }
     }
     &--link {
@@ -119,20 +119,20 @@ p {
     flex-wrap: nowrap;
   }
   &__logo {
-    margin-top: 48px;
+    margin-top: 3rem;
     @include breakpoint.medium {
       display: none;
     }
   }
   &__lables-copyright {
-    margin: 16px 0 0;
-    font-size: 10px;
-    line-height: 20px;
+    margin: 1rem 0 0;
+    font-size: 0.625rem;
+    line-height: 1.25rem;
     font-weight: 400;
     color: color.$white;
     @include breakpoint.medium {
-      font-size: 12px;
-      line-height: 20px;
+      font-size: 0.75rem;
+      line-height: 1.25rem;
     }
   }
 }
