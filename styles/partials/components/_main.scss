@@ -201,3 +201,32 @@
     }
   }
 }
+
+.conversation-container {
+  background-color: color.$white;
+}
+.form {
+  &__section-header-text {
+  }
+  &__comment-button {
+    &--link {
+      text-decoration: none;
+    }
+  }
+}
+
+.divider {
+}
+
+.comments-container {
+}
+.comments {
+  &__avatar {
+  }
+  &__copy-body-text {
+    &--user-name {
+    }
+    &--date {
+    }
+  }
+}

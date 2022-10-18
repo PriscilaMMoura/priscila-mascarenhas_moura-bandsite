@@ -556,9 +556,4 @@ h5 {
 *::before,
 *::after {
   box-sizing: inherit;
-}
-
-.app-container {
-  display: flex;
-  flex-direction: column;
-}/*# sourceMappingURL=bio.css.map */
+}/*# sourceMappingURL=shows.css.map */
