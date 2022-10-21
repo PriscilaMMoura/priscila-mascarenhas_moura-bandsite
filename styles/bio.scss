@@ -5,7 +5,9 @@
 @use "./partials/breakpoints" as breakpoint;
 
 html,
-body {
+body,
+input,
+textarea {
   margin: 0;
   font-family: "AvenirNextLTPro";
   box-sizing: border-box;

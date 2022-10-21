@@ -253,29 +253,23 @@
   &__field-box {
     width: 100%;
     border-radius: 4px;
-
     border: 1px solid color.$mercury;
+    padding: 12px;
+    font-size: 13px;
+    font-weight: 400;
+    color: color.$bs-black;
+    background-color: color.$alabaster;
+    resize: none;
 
     &--name {
       max-height: 36px;
       margin-bottom: 16px;
     }
-    &--comment {
-    }
-  }
-  &__copy-body-text-box {
-    padding: 12px;
-    // font-size: 13px;
-    font-size: 10px;
-    // line-height: 20px;
-    font-weight: 400;
-    color: color.$bs-black;
   }
 
   &__button {
     background-color: color.$bs-black;
     color: color.$white;
-    line-height: 40px;
     font-weight: 600;
     text-decoration: none;
     text-align: center;

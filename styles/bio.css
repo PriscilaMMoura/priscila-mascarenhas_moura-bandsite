@@ -427,21 +427,20 @@
   width: 100%;
   border-radius: 4px;
   border: 1px solid #e1e1e1;
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #323232;
+  background-color: #fafafa;
+  resize: none;
 }
 .form__field-box--name {
   max-height: 36px;
   margin-bottom: 16px;
 }
-.form__copy-body-text-box {
-  padding: 12px;
-  font-size: 10px;
-  font-weight: 400;
-  color: #323232;
-}
 .form__button {
   background-color: #323232;
   color: #ffffff;
-  line-height: 40px;
   font-weight: 600;
   text-decoration: none;
   text-align: center;
@@ -643,7 +642,9 @@ p {
 }
 
 html,
-body {
+body,
+input,
+textarea {
   margin: 0;
   font-family: "AvenirNextLTPro";
   box-sizing: border-box;

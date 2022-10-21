@@ -32,9 +32,13 @@ const shows = [
 ];
 
 const renderTask = (taskObj, tasksListContainer) => {
+  const showsDetails = document.createElement("div");
+  showsDetails.classList.add("shows__details");
+  tasksListContainer.appendChild(showsDetails);
+
   const dateBlock = document.createElement("div");
   dateBlock.classList.add("shows__dates");
-  tasksListContainer.appendChild(dateBlock);
+  showsDetails.appendChild(dateBlock);
 
   const dateHeader = document.createElement("span");
   dateHeader.classList.add("shows__copy-body-text");
@@ -88,16 +92,11 @@ const renderTask = (taskObj, tasksListContainer) => {
 };
 
 const target = document.querySelector(".shows");
-console.log(target);
 
 const sectionHeader = document.createElement("h4");
 sectionHeader.classList.add("shows__section-header-text");
 sectionHeader.innerText = "Shows";
 target.appendChild(sectionHeader);
-
-const showsDetails = document.createElement("div");
-showsDetails.classList.add("shows__details");
-target.appendChild(showsDetails);
 
 const render = (showsDetails) => {
   for (let i = 0; i < shows.length; i++) {
@@ -105,4 +104,4 @@ const render = (showsDetails) => {
   }
 };
 
-render(showsDetails);
+render(target);
