@@ -1,6 +1,6 @@
 @use "./partials/fonts";
 @use "./partials/components/header";
-@use "./partials/components/main";
+@use "./partials/components/mainShows";
 @use "./partials/components/footer";
 @use "./partials/breakpoints" as breakpoint;
 
@@ -25,4 +25,9 @@ h5 {
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
 }
