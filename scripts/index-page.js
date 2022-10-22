@@ -30,6 +30,7 @@ const renderTask = (commentObj, tasksListContainer) => {
 
   const commentsAvatar = document.createElement("div");
   commentsAvatar.classList.add("comments__avatar-container");
+  commentsAvatar.classList.add("comments__avatar");
   comments.appendChild(commentsAvatar);
 
   const commentsTextBlock = document.createElement("div");
@@ -48,7 +49,7 @@ const renderTask = (commentObj, tasksListContainer) => {
 
   const commentsDate = document.createElement("span");
   commentsDate.classList.add("comments__copy-body-text");
-  commentsDate.classList.add("comments__copy-body-text--user-date");
+  commentsDate.classList.add("comments__copy-body-text--date");
   commentsDate.innerText = commentObj.timestamp;
   commentsNameDateBlock.appendChild(commentsDate);
 

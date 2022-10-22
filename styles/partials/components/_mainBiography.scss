@@ -226,16 +226,18 @@
   display: flex;
 
   &__avatar-container {
-    padding-right: 16px;
+    margin-right: 16px;
+    width: 36px;
+    height: 36px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    top: 24px;
   }
 
   &__avatar {
-    max-width: 36px;
-    max-height: 36px;
-    border-radius: 50%;
-    background-color: color.$mercury;
-    position: relative;
-    top: 24px;
+    height: 100%;
+    min-width: 100%;
   }
 
   &__fields-container {
@@ -289,28 +291,37 @@
 .comments {
   border-bottom: solid 1px color.$mercury;
   display: flex;
-  padding-top: 16px;
-  &__name-date-container {
-    display: flex;
-  }
 
   &__avatar-container {
-    padding-right: 16px;
+    margin: 16px 16px 0 0;
+    min-width: 36px;
+    min-height: 36px;
   }
 
   &__avatar {
     max-width: 36px;
     max-height: 36px;
     border-radius: 50%;
+
     background-color: color.$mercury;
   }
 
-  &__copy-body-text {
+  &__text-container {
+    padding: 16px 0;
+    width: 100%;
+  }
+
+  &__name-date-container {
+    display: flex;
     padding-bottom: 16px;
+  }
+
+  &__copy-body-text {
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
     color: color.$bs-black;
+    overflow-wrap: anywhere;
     &--user-name {
       font-weight: 600;
     }
