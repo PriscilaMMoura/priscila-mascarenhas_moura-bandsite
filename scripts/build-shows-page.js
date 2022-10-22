@@ -31,18 +31,20 @@ const shows = [
   },
 ];
 
-const renderTask = (taskObj, tasksListContainer) => {
+const renderTask = (taskObj, showsContainer) => {
+  //Parent detail
   const showsDetails = document.createElement("div");
   showsDetails.classList.add("shows__details");
-  tasksListContainer.appendChild(showsDetails);
+  showsContainer.appendChild(showsDetails);
 
+  //child date
   const dateBlock = document.createElement("div");
   dateBlock.classList.add("shows__dates");
   showsDetails.appendChild(dateBlock);
 
   const dateHeader = document.createElement("span");
   dateHeader.classList.add("shows__copy-body-text");
-  dateHeader.classList.add("shows__copy-body-text--header");
+  dateHeader.classList.add("shows__copy-body-text--header-small");
   dateHeader.innerText = "DATE";
   dateBlock.appendChild(dateHeader);
 
@@ -52,17 +54,14 @@ const renderTask = (taskObj, tasksListContainer) => {
   dateText.innerText = taskObj.date;
   dateBlock.appendChild(dateText);
 
-  const showsButton = document.createElement("a");
-  showsButton.classList.add("shows__button");
-  showsButton.innerText = "BUY TICKETS";
-  dateBlock.appendChild(showsButton);
+  //child venue
   const venueBlock = document.createElement("div");
   venueBlock.classList.add("shows__venues");
-  tasksListContainer.appendChild(venueBlock);
+  showsDetails.appendChild(venueBlock);
 
   const venueHeader = document.createElement("span");
   venueHeader.classList.add("shows__copy-body-text");
-  venueHeader.classList.add("shows__copy-body-text--header");
+  venueHeader.classList.add("shows__copy-body-text--header-small");
   venueHeader.innerText = "VENUE";
   venueBlock.appendChild(venueHeader);
 
@@ -71,15 +70,14 @@ const renderTask = (taskObj, tasksListContainer) => {
   venueText.innerText = taskObj.vanue;
   venueBlock.appendChild(venueText);
 
-  venueBlock.appendChild(showsButton);
-
+  //child
   const locationBlock = document.createElement("div");
   locationBlock.classList.add("shows__locations");
-  tasksListContainer.appendChild(locationBlock);
+  showsDetails.appendChild(locationBlock);
 
   const locationHeader = document.createElement("span");
   locationHeader.classList.add("shows__copy-body-text");
-  locationHeader.classList.add("shows__copy-body-text--header");
+  locationHeader.classList.add("shows__copy-body-text--header-small");
   locationHeader.innerText = "LOCATIONS";
   locationBlock.appendChild(locationHeader);
 
@@ -88,20 +86,50 @@ const renderTask = (taskObj, tasksListContainer) => {
   locationText.innerText = taskObj.location;
   locationBlock.appendChild(locationText);
 
-  locationBlock.appendChild(showsButton);
+  //child button
+  const showsButton = document.createElement("button");
+  showsButton.classList.add("shows__button");
+  showsButton.setAttribute("type", "submit");
+  showsButton.innerText = "BUY TICKETS";
+  showsDetails.appendChild(showsButton);
 };
 
-const target = document.querySelector(".shows");
+const showsSection = document.querySelector(".shows");
 
 const sectionHeader = document.createElement("h4");
 sectionHeader.classList.add("shows__section-header-text");
 sectionHeader.innerText = "Shows";
-target.appendChild(sectionHeader);
+showsSection.appendChild(sectionHeader);
 
+const headerContainer = document.createElement("div");
+headerContainer.classList.add("shows__header-container-mid");
+showsSection.appendChild(headerContainer);
+
+const dateHeader = document.createElement("span");
+dateHeader.classList.add("shows__copy-body-text");
+dateHeader.classList.add("shows__copy-body-text--header-mid");
+dateHeader.innerText = "DATE";
+headerContainer.appendChild(dateHeader);
+
+const venueHeader = document.createElement("span");
+venueHeader.classList.add("shows__copy-body-text");
+venueHeader.classList.add("shows__copy-body-text--header-mid");
+venueHeader.innerText = "VENUE";
+headerContainer.appendChild(venueHeader);
+
+const locationHeader = document.createElement("span");
+locationHeader.classList.add("shows__copy-body-text");
+locationHeader.classList.add("shows__copy-body-text--header-mid");
+locationHeader.innerText = "LOCATIONS";
+headerContainer.appendChild(locationHeader);
+
+const showsContainer = document.createElement("div");
+showsContainer.classList.add("shows__container");
+showsSection.appendChild(showsContainer);
 const render = (showsDetails) => {
   for (let i = 0; i < shows.length; i++) {
     renderTask(shows[i], showsDetails);
   }
 };
 
-render(target);
+render(showsContainer);

@@ -278,6 +278,7 @@
     display: block;
     height: 40px;
     border-radius: 4px;
+    border: 0;
     margin-top: 16px;
     &:hover {
       background-color: color.$bs-dark-black;

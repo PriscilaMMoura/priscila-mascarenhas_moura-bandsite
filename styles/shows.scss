@@ -8,10 +8,12 @@ html,
 body,
 input,
 textarea,
-span {
+span,
+button {
   margin: 0;
   font-family: "AvenirNextLTPro";
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 p,
@@ -20,8 +22,7 @@ h1,
 h2,
 h3,
 h4,
-h5,
-span {
+h5 {
   margin: 0;
 }
 

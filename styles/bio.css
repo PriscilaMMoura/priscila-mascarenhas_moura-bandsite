@@ -449,6 +449,7 @@
   display: block;
   height: 40px;
   border-radius: 4px;
+  border: 0;
   margin-top: 16px;
 }
 .form__button:hover {
@@ -656,6 +657,7 @@ textarea {
   margin: 0;
   font-family: "AvenirNextLTPro";
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 p,
