@@ -156,7 +156,41 @@
             </section>
           </div>
           <div class="conversation-container">
-            <section class="conversation"></section>
+            <section class="conversation">
+              <h4 class="conversation__section-header-text">
+                Join the Conversation
+              </h4>
+              <div class="form" id="comments-form">
+                <div class="form__avatar-container">
+                  <img
+                    class="form__avatar"
+                    src="./assets/avatar/Gizmo_29.jpeg"
+                    alt="user avatar"
+                  />
+                </div>
+                <form class="form__fields-container">
+                  <label class="form__label-text" for="name">NAME</label
+                  ><input
+                    class="form__field-box form__field-box--name"
+                    id="name"
+                    type="text"
+                    name="name"
+                    placeholder="Enter your name"
+                  /><label class="form__label-text" for="user-comments"
+                    >COMMENT</label
+                  ><textarea
+                    class="form__field-box"
+                    name="userComments"
+                    id="userComments"
+                    cols="30"
+                    rows="10"
+                    placeholder="Add a new comment"
+                  ></textarea
+                  ><button type="submit" class="form__button">COMMENT</button>
+                </form>
+              </div>
+              <div class="comments-container"></div>
+            </section>
           </div>
         </div>
       </main>
