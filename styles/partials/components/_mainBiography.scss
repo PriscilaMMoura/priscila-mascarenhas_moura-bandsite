@@ -61,6 +61,9 @@
     display: flex;
     flex-direction: column;
     @include breakpoint.medium {
+      padding: 0 3.5rem;
+    }
+    @include breakpoint.large {
       padding: 0 5.5rem;
     }
   }
@@ -119,6 +122,9 @@
 
   &__text-area {
     @include breakpoint.medium {
+      padding: 0 3.5rem;
+    }
+    @include breakpoint.large {
       padding: 0 5.5rem;
     }
   }
@@ -277,22 +283,26 @@
 }
 
 .form {
-  padding-bottom: 16px;
+  padding-bottom: 1rem;
   display: flex;
   @include breakpoint.medium {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-    padding-bottom: 24px;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    padding-bottom: 1.5rem;
+  }
+  @include breakpoint.medium {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   &__avatar-container {
-    margin-right: 16px;
-    width: 40px;
-    height: 36px;
+    margin-right: 1rem;
+    width: 2.5rem;
+    height: 2.25rem;
     overflow: hidden;
     border-radius: 50%;
     position: relative;
-    top: 24px;
+    top: 1.5rem;
   }
 
   &__avatar {
@@ -306,43 +316,43 @@
     width: 100%;
   }
   &__label-text {
-    font-size: 10px;
-    line-height: 20px;
+    font-size: 0.625rem;
+    line-height: 1.25rem;
     font-weight: 700;
     color: color.$silver;
-    padding-bottom: 4px;
+    padding-bottom: 0.25rem;
     @include breakpoint.medium {
-      font-size: 12px;
+      font-size: 0.75rem;
     }
   }
   &__field-box {
     width: 100%;
-    border-radius: 4px;
-    border: 1px solid color.$mercury;
-    padding: 12px;
-    font-size: 13px;
+    border-radius: 0.25rem;
+    border: 0.063rem solid color.$mercury;
+    padding: 0.75rem;
+    font-size: 0.813rem;
     font-weight: 400;
     color: color.$bs-black;
     background-color: color.$alabaster;
     resize: none;
     &:focus {
       outline: none;
-      border: 1px solid color.$bs-black;
+      border: 0.063rem solid color.$bs-black;
     }
     @include breakpoint.medium {
-      font-size: 14px;
+      font-size: 0.875rem;
     }
 
     &--name {
-      max-height: 36px;
-      margin-bottom: 16px;
+      max-height: 2.25rem;
+      margin-bottom: 1rem;
       @include breakpoint.medium {
-        margin-bottom: 24px;
+        margin-bottom: 1.5rem;
       }
     }
 
     &--error {
-      border: 1px solid color.$input-box-error;
+      border: 0.063rem solid color.$input-box-error;
     }
   }
 
@@ -353,12 +363,12 @@
     text-decoration: none;
     text-align: center;
     display: block;
-    height: 40px;
-    border-radius: 4px;
+    height: 2.5rem;
+    border-radius: 0.25rem;
     border: 0;
-    margin-top: 16px;
+    margin-top: 1rem;
     @include breakpoint.medium {
-      margin-top: 24px;
+      margin-top: 1.5rem;
       width: 25%;
       margin-left: auto;
     }
@@ -373,55 +383,59 @@
 }
 
 .comments-container {
-  border-top: solid 1px color.$mercury;
+  border-top: solid 0.063rem color.$mercury;
   @include breakpoint.medium {
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+  }
+  @include breakpoint.large {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
   }
 }
 .comments {
-  border-bottom: solid 1px color.$mercury;
+  border-bottom: solid 0.063rem color.$mercury;
   display: flex;
 
   &__avatar-container {
-    margin: 16px 16px 0 0;
-    min-width: 36px;
-    min-height: 36px;
+    margin: 1rem 1rem 0 0;
+    min-width: 2.25rem;
+    min-height: 2.25rem;
     @include breakpoint.medium {
-      margin-top: 24px;
+      margin-top: 1.5rem;
     }
   }
 
   &__avatar {
-    max-width: 40px;
-    max-height: 36px;
+    max-width: 2.5rem;
+    max-height: 2.25rem;
     border-radius: 50%;
 
     background-color: color.$mercury;
   }
 
   &__text-container {
-    padding: 16px 0;
+    padding: 1rem 0;
     width: 100%;
     @include breakpoint.medium {
-      padding: 24px 0;
+      padding: 1.5rem 0;
     }
   }
 
   &__name-date-container {
     display: flex;
-    padding-bottom: 16px;
+    padding-bottom: 1rem;
   }
 
   &__copy-body-text {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 0.813rem;
+    line-height: 1.125rem;
     font-weight: 400;
     color: color.$bs-black;
     overflow-wrap: anywhere;
     @include breakpoint.medium {
-      font-size: 14px;
-      line-height: 22px;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
     }
     &--user-name {
       font-weight: 600;

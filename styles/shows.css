@@ -117,11 +117,11 @@
 
 .main-container {
   background-color: #ffffff;
-  padding: 24px 16px 16px 16px;
+  padding: 1.5rem 1rem 1rem 1rem;
 }
 @media only screen and (min-width: 768px) {
   .main-container {
-    padding: 48px 16px 36px 16px;
+    padding: 3rem 1rem 2.25rem 1rem;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -146,11 +146,13 @@
 .hero__items-container {
   display: flex;
   flex-direction: column;
-  margin: 24px 16px;
+  padding: 1.5rem 1rem;
+  margin: auto 0;
 }
 @media only screen and (min-width: 768px) {
   .hero__items-container {
-    margin: 48px 36px;
+    padding: 3rem 0;
+    margin: auto 2.25rem;
     width: 75%;
   }
 }
@@ -183,7 +185,7 @@
 }
 @media only screen and (min-width: 1280px) {
   .hero .hero__iframe {
-    width: 400px;
+    width: 25rem;
   }
 }
 .hero__album-title {
@@ -191,13 +193,13 @@
   line-height: 2rem;
   font-weight: 600;
   color: #ffffff;
-  padding-bottom: 16px;
+  padding-bottom: 1rem;
 }
 @media only screen and (min-width: 768px) {
   .hero__album-title {
-    font-size: 24px;
-    line-height: 32px;
-    padding-bottom: 36px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding-bottom: 1.5rem;
   }
 }
 .hero__song-title {
@@ -205,13 +207,13 @@
   line-height: 2rem;
   font-weight: 700;
   color: #ffffff;
-  padding-bottom: 16px;
+  padding-bottom: 1rem;
 }
 @media only screen and (min-width: 768px) {
   .hero__song-title {
     font-size: 3.75rem;
     line-height: 4.25rem;
-    padding-bottom: 36px;
+    padding-bottom: 3rem;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -236,8 +238,8 @@
     padding-bottom: 2.25rem;
     font-size: 2.25rem;
     line-height: 2.75rem;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -273,12 +275,12 @@
 @media only screen and (min-width: 1280px) {
   .shows__header-row-right {
     width: 75%;
-    padding: 0 16px;
+    padding: 0 1rem;
   }
 }
 .shows__details {
-  border-bottom: 1px solid #e1e1e1;
-  padding: 16px 0;
+  border-bottom: 0.063rem solid #e1e1e1;
+  padding: 1rem 0;
 }
 @media only screen and (min-width: 768px) {
   .shows__details {
@@ -286,8 +288,8 @@
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
   .shows__details--selected {
     background-color: #e1e1e1;
@@ -299,7 +301,7 @@
 @media only screen and (min-width: 1280px) {
   .shows__details {
     margin: 0;
-    padding: 16px 0;
+    padding: 1rem 0;
     width: 75%;
     justify-content: center;
   }
@@ -317,7 +319,7 @@
 .shows__venues {
   display: flex;
   flex-direction: column;
-  margin: 16px 0;
+  margin: 1rem 0;
 }
 @media only screen and (min-width: 768px) {
   .shows__venues {
@@ -343,8 +345,8 @@
   .shows__header-container-mid {
     display: flex;
     flex-direction: row;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -355,15 +357,15 @@
   }
 }
 .shows__copy-body-text {
-  font-size: 10px;
-  line-height: 20px;
+  font-size: 0.813rem;
+  line-height: 1.125rem;
   font-weight: 400;
   color: #323232;
 }
 @media only screen and (min-width: 768px) {
   .shows__copy-body-text {
-    font-size: 12px;
-    line-height: 20px;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
   }
 }
 .shows__copy-body-text--date {
@@ -371,7 +373,8 @@
 }
 .shows__copy-body-text--header-small {
   color: #afafaf;
-  font-weight: 700;
+  font-weight: 600;
+  padding-bottom: 4px;
 }
 @media only screen and (min-width: 768px) {
   .shows__copy-body-text--header-small {
@@ -380,24 +383,24 @@
 }
 @media only screen and (min-width: 1280px) {
   .shows__copy-body-text--location {
-    margin-left: 16px;
+    margin-left: 1rem;
   }
 }
 @media only screen and (min-width: 1280px) {
   .shows__copy-body-text--venue {
-    margin-left: 16px;
+    margin-left: 1rem;
   }
 }
 .shows__copy-body-text--header-mid {
-  font-size: 10px;
-  line-height: 20px;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
   color: #afafaf;
-  font-weight: 700;
+  font-weight: 600;
 }
 @media only screen and (min-width: 768px) {
   .shows__copy-body-text--header-mid {
-    font-size: 12px;
-    line-height: 20px;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
     width: 25%;
   }
 }
@@ -408,10 +411,10 @@
   text-decoration: none;
   text-align: center;
   width: 100%;
-  height: 40px;
-  border-radius: 4px;
+  height: 2.5rem;
+  border-radius: 0.25rem;
   border: 0;
-  margin-top: 16px;
+  margin-top: 1rem;
 }
 @media only screen and (min-width: 768px) {
   .shows__button {
