@@ -24,6 +24,7 @@
 }
 /* primary colors */
 /* secundary colors */
+/*error state*/
 /* styles for header for mobile */
 .nav-bar-container {
   background-color: #323232;
@@ -46,7 +47,7 @@
   .nav-bar {
     margin-left: auto;
     margin-right: auto;
-    max-width: 75.5rem;
+    max-width: 64.5rem;
     padding: 0;
   }
 }
@@ -148,8 +149,8 @@
 @media only screen and (min-width: 1280px) {
   .hero__title {
     margin: auto;
-    padding-right: 47rem;
-    max-width: 75.5rem;
+    padding-right: 36rem;
+    max-width: 64.5rem;
   }
 }
 
@@ -167,7 +168,7 @@
     padding-left: 0;
     margin-left: auto;
     margin-right: auto;
-    max-width: 75.5rem;
+    max-width: 64.5rem;
   }
 }
 .article__picture-area {
@@ -176,7 +177,7 @@
 }
 @media only screen and (min-width: 768px) {
   .article__picture-area {
-    padding: 0 3.5rem;
+    padding: 0 5.5rem;
   }
 }
 .article__section-header-text {
@@ -239,7 +240,7 @@
 }
 @media only screen and (min-width: 768px) {
   .article__text-area {
-    padding: 0 3.5rem;
+    padding: 0 5.5rem;
   }
 }
 .article__subheader-text {
@@ -288,7 +289,7 @@
     padding-left: 0;
     margin-left: auto;
     margin-right: auto;
-    max-width: 75.5rem;
+    max-width: 64.5rem;
   }
 }
 .photo-gallery__section-header-text {
@@ -375,9 +376,30 @@
   }
 }
 
+@media only screen and (min-width: 1280px) {
+  .conversation {
+    max-width: 33.5rem;
+    margin: 0 auto;
+  }
+}
+
 .conversation-container {
   background-color: #ffffff;
   padding: 24px 16px 16px 16px;
+}
+@media only screen and (min-width: 768px) {
+  .conversation-container {
+    padding: 48px 36px 36px 36px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .conversation-container {
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 64.5rem;
+  }
 }
 
 .conversation__section-header-text {
@@ -400,9 +422,16 @@
   padding-bottom: 16px;
   display: flex;
 }
+@media only screen and (min-width: 768px) {
+  .form {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-bottom: 24px;
+  }
+}
 .form__avatar-container {
   margin-right: 16px;
-  width: 36px;
+  width: 40px;
   height: 36px;
   overflow: hidden;
   border-radius: 50%;
@@ -425,6 +454,11 @@
   color: #afafaf;
   padding-bottom: 4px;
 }
+@media only screen and (min-width: 768px) {
+  .form__label-text {
+    font-size: 12px;
+  }
+}
 .form__field-box {
   width: 100%;
   border-radius: 4px;
@@ -436,9 +470,26 @@
   background-color: #fafafa;
   resize: none;
 }
+.form__field-box:focus {
+  outline: none;
+  border: 1px solid #323232;
+}
+@media only screen and (min-width: 768px) {
+  .form__field-box {
+    font-size: 14px;
+  }
+}
 .form__field-box--name {
   max-height: 36px;
   margin-bottom: 16px;
+}
+@media only screen and (min-width: 768px) {
+  .form__field-box--name {
+    margin-bottom: 24px;
+  }
+}
+.form__field-box--error {
+  border: 1px solid #d22d2d;
 }
 .form__button {
   background-color: #323232;
@@ -452,12 +503,30 @@
   border: 0;
   margin-top: 16px;
 }
+@media only screen and (min-width: 768px) {
+  .form__button {
+    margin-top: 24px;
+    width: 25%;
+    margin-left: auto;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .form__button {
+    width: 35%;
+  }
+}
 .form__button:hover {
   background-color: #000000;
 }
 
 .comments-container {
   border-top: solid 1px #e1e1e1;
+}
+@media only screen and (min-width: 768px) {
+  .comments-container {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
 }
 
 .comments {
@@ -469,8 +538,13 @@
   min-width: 36px;
   min-height: 36px;
 }
+@media only screen and (min-width: 768px) {
+  .comments__avatar-container {
+    margin-top: 24px;
+  }
+}
 .comments__avatar {
-  max-width: 36px;
+  max-width: 40px;
   max-height: 36px;
   border-radius: 50%;
   background-color: #e1e1e1;
@@ -478,6 +552,11 @@
 .comments__text-container {
   padding: 16px 0;
   width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .comments__text-container {
+    padding: 24px 0;
+  }
 }
 .comments__name-date-container {
   display: flex;
@@ -489,6 +568,12 @@
   font-weight: 400;
   color: #323232;
   overflow-wrap: anywhere;
+}
+@media only screen and (min-width: 768px) {
+  .comments__copy-body-text {
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
 .comments__copy-body-text--user-name {
   font-weight: 600;
@@ -519,7 +604,7 @@ p {
   .footer-container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 75.5rem;
+    max-width: 64.5rem;
   }
 }
 

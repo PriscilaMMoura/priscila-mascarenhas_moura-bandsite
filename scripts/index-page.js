@@ -67,11 +67,31 @@ commentsForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const inputBoxName = document.getElementById("name");
+  // inputBoxName.classList.add("form__field-box--selected");
   const inputBoxComments = document.getElementById("userComments");
+  // inputBoxName.classList.add("form__field-box--selected");
 
-  if (inputBoxName.value === "" || inputBoxComments.value === "") {
-    alert("error");
+  if (inputBoxName.value === "" && inputBoxComments.value === "") {
+    inputBoxComments.classList.add("form__field-box--error");
+    inputBoxName.classList.add("form__field-box--error");
     return;
+  } else {
+    inputBoxComments.classList.remove("form__field-box--error");
+    inputBoxName.classList.remove("form__field-box--error");
+  }
+
+  if (inputBoxName.value === "") {
+    inputBoxName.classList.add("form__field-box--error");
+    return;
+  } else {
+    inputBoxName.classList.remove("form__field-box--error");
+  }
+
+  if (inputBoxComments.value === "") {
+    inputBoxComments.classList.add("form__field-box--error");
+    return;
+  } else {
+    inputBoxComments.classList.remove("form__field-box--error");
   }
 
   const date = new Date();
