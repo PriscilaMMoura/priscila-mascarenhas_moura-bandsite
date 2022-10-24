@@ -114,12 +114,17 @@
   border-bottom: 0.188rem solid #ffffff;
 }
 
+.main-container {
+  background-color: #ffffff;
+  padding: 24px 16px 16px 16px;
+}
+
 .hero {
   max-width: 100vw;
   min-height: 55vw;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-bio.jpg);
+  background: linear-gradient(to bottom, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-shows.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center right;
@@ -146,11 +151,6 @@
     padding-right: 47rem;
     max-width: 75.5rem;
   }
-}
-
-.main-container {
-  background-color: #ffffff;
-  padding: 24px 16px 16px 16px;
 }
 
 .shows__section-header-text {
@@ -185,6 +185,12 @@
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .shows__details--selected {
+    background-color: #e1e1e1;
+  }
+  .shows__details:not(.nohover):hover {
+    background-color: #fafafa;
   }
 }
 .shows__dates {

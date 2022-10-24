@@ -5,6 +5,44 @@
   background-color: color.$white;
   padding: 24px 16px 16px 16px;
 }
+
+.hero {
+  max-width: 100vw;
+  min-height: 55vw;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+      to bottom,
+      rgba(color.$bs-black, 0.5),
+      rgba(color.$bs-black, 0.5)
+    ),
+    url(../assets/images/hero-shows.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center right;
+
+  &__title {
+    /*text styles: page header*/
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: color.$white;
+    margin: auto 1rem;
+    @include breakpoint.medium {
+      font-size: 3.75rem;
+      line-height: 4.25rem;
+      font-weight: 700;
+      margin: auto 2.25rem;
+    }
+
+    @include breakpoint.large {
+      margin: auto;
+      padding-right: 47rem;
+      max-width: 75.5rem;
+    }
+  }
+}
+
 .shows {
   &__section-header-text {
     margin: 0;
@@ -35,6 +73,14 @@
       align-items: center;
       padding-left: 20px;
       padding-right: 20px;
+
+      &--selected {
+        background-color: color.$mercury;
+      }
+
+      &:not(.nohover):hover {
+        background-color: color.$alabaster;
+      }
     }
   }
 
@@ -115,7 +161,6 @@
     font-weight: 600;
     text-decoration: none;
     text-align: center;
-    // display: block;
     width: 100%;
     height: 40px;
     border-radius: 4px;

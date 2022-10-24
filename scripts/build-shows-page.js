@@ -32,6 +32,7 @@ const shows = [
 ];
 
 const renderTask = (taskObj, showsContainer) => {
+  const uniqueId = () => Math.random().toString(36).substring(2, 9);
   //Parent detail
   const showsDetails = document.createElement("div");
   showsDetails.classList.add("shows__details");
@@ -98,6 +99,7 @@ const showsSection = document.querySelector(".shows");
 
 const sectionHeader = document.createElement("h4");
 sectionHeader.classList.add("shows__section-header-text");
+sectionHeader.setAttribute("id", "shows");
 sectionHeader.innerText = "Shows";
 showsSection.appendChild(sectionHeader);
 
@@ -126,6 +128,7 @@ headerContainer.appendChild(locationHeader);
 const showsContainer = document.createElement("div");
 showsContainer.classList.add("shows__container");
 showsSection.appendChild(showsContainer);
+
 const render = (showsDetails) => {
   for (let i = 0; i < shows.length; i++) {
     renderTask(shows[i], showsDetails);
@@ -133,3 +136,19 @@ const render = (showsDetails) => {
 };
 
 render(showsContainer);
+
+const allShowsDetails = document.querySelectorAll(".shows__details");
+
+for (let i = 0; i < allShowsDetails.length; i++) {
+  const eachShowsDetails = allShowsDetails[i];
+
+  eachShowsDetails.addEventListener("click", (event) => {
+    allShowsDetails.forEach((eachShowsDetails) => {
+      eachShowsDetails.classList.remove("shows__details--selected");
+      eachShowsDetails.classList.remove("nohover");
+    });
+
+    eachShowsDetails.classList.add("shows__details--selected");
+    eachShowsDetails.classList.add("nohover");
+  });
+}
