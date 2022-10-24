@@ -119,6 +119,19 @@
   background-color: #ffffff;
   padding: 24px 16px 16px 16px;
 }
+@media only screen and (min-width: 768px) {
+  .main-container {
+    padding: 48px 16px 36px 16px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .main-container {
+    width: 64.5rem;
+    margin: auto;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
 
 .hero {
   max-width: 100vw;
@@ -130,30 +143,87 @@
   background-repeat: no-repeat;
   background-position: center right;
 }
-.hero__title {
-  /*text styles: page header*/
+.hero__items-container {
+  display: flex;
+  flex-direction: column;
+  margin: 24px 16px;
+}
+@media only screen and (min-width: 768px) {
+  .hero__items-container {
+    margin: 48px 36px;
+    width: 75%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero__items-container {
+    flex-direction: row;
+    width: 64.5rem;
+    margin: auto;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero__text-container {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero__embeded-song {
+    margin-top: auto;
+    margin-left: auto;
+    text-align: right;
+  }
+}
+.hero .hero__iframe {
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .hero .hero__iframe {
+    width: 75%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero .hero__iframe {
+    width: 400px;
+  }
+}
+.hero__album-title {
+  font-size: 1rem;
+  line-height: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  padding-bottom: 16px;
+}
+@media only screen and (min-width: 768px) {
+  .hero__album-title {
+    font-size: 24px;
+    line-height: 32px;
+    padding-bottom: 36px;
+  }
+}
+.hero__song-title {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
   color: #ffffff;
-  margin: auto 1rem;
+  padding-bottom: 16px;
 }
 @media only screen and (min-width: 768px) {
-  .hero__title {
+  .hero__song-title {
     font-size: 3.75rem;
     line-height: 4.25rem;
-    font-weight: 700;
-    margin: auto 2.25rem;
+    padding-bottom: 36px;
   }
 }
 @media only screen and (min-width: 1280px) {
-  .hero__title {
-    margin: auto;
-    padding-right: 47rem;
-    max-width: 75.5rem;
+  .hero__song-title {
+    padding-bottom: 0;
   }
 }
 
+.shows {
+  display: flex;
+  flex-direction: column;
+}
 .shows__section-header-text {
   margin: 0;
   font-size: 1.5rem;
@@ -170,9 +240,41 @@
     padding-right: 20px;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .shows__section-header-text--mid-small {
+    display: none;
+  }
+}
+.shows__section-header-text--large {
+  display: none;
+}
+@media only screen and (min-width: 1280px) {
+  .shows__section-header-text--large {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+  }
+}
 .shows__container {
   display: flex;
   flex-direction: column;
+}
+@media only screen and (min-width: 1280px) {
+  .shows__container {
+    align-items: flex-end;
+  }
+}
+.shows__header-row-right {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+@media only screen and (min-width: 1280px) {
+  .shows__header-row-right {
+    width: 75%;
+    padding: 0 16px;
+  }
 }
 .shows__details {
   border-bottom: 1px solid #e1e1e1;
@@ -192,6 +294,14 @@
   }
   .shows__details:not(.nohover):hover {
     background-color: #fafafa;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .shows__details {
+    margin: 0;
+    padding: 16px 0;
+    width: 75%;
+    justify-content: center;
   }
 }
 .shows__dates {
@@ -237,6 +347,13 @@
     padding-right: 20px;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .shows__header-container-mid {
+    padding-left: 0;
+    padding-right: 0;
+    align-items: baseline;
+  }
+}
 .shows__copy-body-text {
   font-size: 10px;
   line-height: 20px;
@@ -259,6 +376,16 @@
 @media only screen and (min-width: 768px) {
   .shows__copy-body-text--header-small {
     display: none;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .shows__copy-body-text--location {
+    margin-left: 16px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .shows__copy-body-text--venue {
+    margin-left: 16px;
   }
 }
 .shows__copy-body-text--header-mid {
@@ -292,6 +419,12 @@
     margin: 0;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .shows__button {
+    width: 20%;
+    margin: 0;
+  }
+}
 .shows__button:hover {
   background-color: #000000;
 }
@@ -299,10 +432,6 @@
 footer {
   background-color: #323232;
   max-width: 100vw;
-}
-
-p {
-  margin: 0;
 }
 
 .footer-container {

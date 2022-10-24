@@ -32,7 +32,6 @@ const shows = [
 ];
 
 const renderTask = (taskObj, showsContainer) => {
-  const uniqueId = () => Math.random().toString(36).substring(2, 9);
   //Parent detail
   const showsDetails = document.createElement("div");
   showsDetails.classList.add("shows__details");
@@ -99,6 +98,7 @@ const showsSection = document.querySelector(".shows");
 
 const sectionHeader = document.createElement("h4");
 sectionHeader.classList.add("shows__section-header-text");
+sectionHeader.classList.add("shows__section-header-text--mid-small");
 sectionHeader.setAttribute("id", "shows");
 sectionHeader.innerText = "Shows";
 showsSection.appendChild(sectionHeader);
@@ -107,23 +107,42 @@ const headerContainer = document.createElement("div");
 headerContainer.classList.add("shows__header-container-mid");
 showsSection.appendChild(headerContainer);
 
+const sectionHeaderLarge = document.createElement("h4");
+sectionHeaderLarge.classList.add("shows__section-header-text");
+sectionHeaderLarge.classList.add("shows__section-header-text--large");
+sectionHeaderLarge.setAttribute("id", "shows");
+sectionHeaderLarge.innerText = "Shows";
+headerContainer.appendChild(sectionHeaderLarge);
+
+const headerRowRight = document.createElement("div");
+headerRowRight.classList.add("shows__header-row-right");
+headerContainer.appendChild(headerRowRight);
+
 const dateHeader = document.createElement("span");
 dateHeader.classList.add("shows__copy-body-text");
 dateHeader.classList.add("shows__copy-body-text--header-mid");
 dateHeader.innerText = "DATE";
-headerContainer.appendChild(dateHeader);
+headerRowRight.appendChild(dateHeader);
 
 const venueHeader = document.createElement("span");
 venueHeader.classList.add("shows__copy-body-text");
+venueHeader.classList.add("shows__copy-body-text--venue");
 venueHeader.classList.add("shows__copy-body-text--header-mid");
 venueHeader.innerText = "VENUE";
-headerContainer.appendChild(venueHeader);
+headerRowRight.appendChild(venueHeader);
 
 const locationHeader = document.createElement("span");
 locationHeader.classList.add("shows__copy-body-text");
+locationHeader.classList.add("shows__copy-body-text--location");
 locationHeader.classList.add("shows__copy-body-text--header-mid");
 locationHeader.innerText = "LOCATIONS";
-headerContainer.appendChild(locationHeader);
+headerRowRight.appendChild(locationHeader);
+
+const ghostHeader = document.createElement("span");
+ghostHeader.classList.add("shows__copy-body-text");
+ghostHeader.classList.add("shows__copy-body-text--header-mid");
+ghostHeader.innerText = "";
+headerRowRight.appendChild(ghostHeader);
 
 const showsContainer = document.createElement("div");
 showsContainer.classList.add("shows__container");

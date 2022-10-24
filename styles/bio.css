@@ -385,11 +385,11 @@
 
 .conversation-container {
   background-color: #ffffff;
-  padding: 24px 16px 16px 16px;
+  padding: 1.5rem 1rem 1rem 1rem;
 }
 @media only screen and (min-width: 768px) {
   .conversation-container {
-    padding: 48px 36px 36px 36px;
+    padding: 3rem 2.25rem 2.25rem 2.25rem;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -586,10 +586,6 @@
 footer {
   background-color: #323232;
   max-width: 100vw;
-}
-
-p {
-  margin: 0;
 }
 
 .footer-container {

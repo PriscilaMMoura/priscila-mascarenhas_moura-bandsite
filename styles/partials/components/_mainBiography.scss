@@ -28,6 +28,7 @@
     font-weight: 700;
     color: color.$white;
     margin: auto 1rem;
+
     @include breakpoint.medium {
       font-size: 3.75rem;
       line-height: 4.25rem;
@@ -248,9 +249,9 @@
 
 .conversation-container {
   background-color: color.$white;
-  padding: 24px 16px 16px 16px;
+  padding: 1.5rem 1rem 1rem 1rem;
   @include breakpoint.medium {
-    padding: 48px 36px 36px 36px;
+    padding: 3rem 2.25rem 2.25rem 2.25rem;
   }
   @include breakpoint.large {
     padding-right: 0;

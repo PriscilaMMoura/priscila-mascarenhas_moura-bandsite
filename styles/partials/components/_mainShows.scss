@@ -4,6 +4,16 @@
 .main-container {
   background-color: color.$white;
   padding: 24px 16px 16px 16px;
+  @include breakpoint.medium {
+    padding: 48px 16px 36px 16px;
+  }
+
+  @include breakpoint.large {
+    width: 64.5rem;
+    margin: auto;
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 .hero {
@@ -21,35 +31,87 @@
   background-repeat: no-repeat;
   background-position: center right;
 
-  &__title {
-    /*text styles: page header*/
+  &__items-container {
+    display: flex;
+    flex-direction: column;
+    margin: 24px 16px;
+    @include breakpoint.medium {
+      margin: 48px 36px;
+      width: 75%;
+    }
+    @include breakpoint.large {
+      flex-direction: row;
+      width: 64.5rem;
+      margin: auto;
+    }
+  }
+
+  &__text-container {
+    @include breakpoint.large {
+      width: 50%;
+    }
+  }
+
+  &__embeded-song {
+    @include breakpoint.large {
+      margin-top: auto;
+      margin-left: auto;
+      text-align: right;
+    }
+  }
+
+  .hero__iframe {
+    width: 100%;
+    @include breakpoint.medium {
+      width: 75%;
+    }
+    @include breakpoint.large {
+      width: 400px;
+    }
+  }
+
+  &__album-title {
+    font-size: 1rem;
+    line-height: 2rem;
+    font-weight: 600;
+    color: color.$white;
+    padding-bottom: 16px;
+
+    @include breakpoint.medium {
+      font-size: 24px;
+      line-height: 32px;
+      padding-bottom: 36px;
+    }
+  }
+
+  &__song-title {
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 700;
     color: color.$white;
-    margin: auto 1rem;
+    padding-bottom: 16px;
     @include breakpoint.medium {
       font-size: 3.75rem;
       line-height: 4.25rem;
-      font-weight: 700;
-      margin: auto 2.25rem;
+      padding-bottom: 36px;
     }
-
     @include breakpoint.large {
-      margin: auto;
-      padding-right: 47rem;
-      max-width: 75.5rem;
+      padding-bottom: 0;
     }
   }
 }
 
 .shows {
+  display: flex;
+  flex-direction: column;
+
   &__section-header-text {
     margin: 0;
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 700;
     color: color.$bs-black;
+
     @include breakpoint.medium {
       padding-bottom: 2.25rem;
       font-size: 2.25rem;
@@ -57,10 +119,40 @@
       padding-left: 20px;
       padding-right: 20px;
     }
+
+    &--mid-small {
+      @include breakpoint.large {
+        display: none;
+      }
+    }
+
+    &--large {
+      display: none;
+      @include breakpoint.large {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        width: 25%;
+      }
+    }
   }
   &__container {
     display: flex;
     flex-direction: column;
+
+    @include breakpoint.large {
+      align-items: flex-end;
+    }
+  }
+
+  &__header-row-right {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    @include breakpoint.large {
+      width: 75%;
+      padding: 0 16px;
+    }
   }
 
   &__details {
@@ -81,6 +173,12 @@
       &:not(.nohover):hover {
         background-color: color.$alabaster;
       }
+    }
+    @include breakpoint.large {
+      margin: 0;
+      padding: 16px 0;
+      width: 75%;
+      justify-content: center;
     }
   }
 
@@ -120,6 +218,11 @@
       padding-left: 20px;
       padding-right: 20px;
     }
+    @include breakpoint.large {
+      padding-left: 0;
+      padding-right: 0;
+      align-items: baseline;
+    }
   }
 
   &__copy-body-text {
@@ -139,6 +242,18 @@
       font-weight: 700;
       @include breakpoint.medium {
         display: none;
+      }
+    }
+
+    &--location {
+      @include breakpoint.large {
+        margin-left: 16px;
+      }
+    }
+
+    &--venue {
+      @include breakpoint.large {
+        margin-left: 16px;
       }
     }
 
@@ -168,6 +283,10 @@
     margin-top: 16px;
     @include breakpoint.medium {
       width: 25%;
+      margin: 0;
+    }
+    @include breakpoint.large {
+      width: 20%;
       margin: 0;
     }
     &:hover {
