@@ -3,39 +3,37 @@
  */
 const commentsURL =
   "https://project-1-api.herokuapp.com/comments?api_key=a495a5fa-eb57-46a9-9925-55ba2b0508e3";
-axios.get(commentsURL).then((response) => {
-  //calls the render function and passes response.data as argument.
-  //response.data is an object.
-  console.log(response);
-  console.log(response.data);
-  appendComment(response.data);
-});
-// .catch((error) => {
-//   console.log(error);
-// });
+const getComments = (comm) => {
+  axios
+    .get(commentsURL, comm)
+    .then((response) => {
+      // console.log(response.data);
+      // console.log(comm);
+      appendComment(response.data);
+      // addNewComment(comm);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
 
-const commentsArr = [];
+const postComments = (userInput) => {
+  axios
+    .post(commentsURL, userInput)
+    .then((responsePost) => {
+      // console.log(responsePost.data);
+      getComments(responsePost.data);
+      // return responsePost.data;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
 
-// const commentsArr = [
-//   {
-//     name: "Miles Acosta",
-//     timestamp: "12/20/2020",
-//     comment:
-//       "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-//   },
-//   {
-//     name: "Emilie Beach",
-//     timestamp: "01/09/2021",
-//     comment:
-//       "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-//   },
-//   {
-//     name: "Connor Walton",
-//     timestamp: "02/17/2021",
-//     comment:
-//       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-//   },
-// ];
+// function addNewComment(apiCommentsObj, newComment) {
+//   const newArr = apiCommentsObj.push(newComment);
+//   appendComment(newArr);
+// }
 
 /*
  * append array of comments to the page
@@ -68,7 +66,7 @@ const renderTask = (commentObj, tasksListContainer) => {
   const commentsDate = document.createElement("span");
   commentsDate.classList.add("comments__copy-body-text");
   commentsDate.classList.add("comments__copy-body-text--date");
-  commentsDate.innerText = commentObj.timestamp;
+  commentsDate.innerText = getCurrentDate(new Date(commentObj.timestamp));
   commentsNameDateBlock.appendChild(commentsDate);
 
   const commentsContent = document.createElement("span");
@@ -110,37 +108,54 @@ commentsForm.addEventListener("submit", (event) => {
     inputBoxComments.classList.remove("form__field-box--error");
   }
 
-  const date = new Date();
-  const day = date.getDate();
-  const month = date.getMonth() + 1;
-  const year = date.getFullYear();
-  const currentDate = `${month}/${day}/${year}`;
   const userInput = {
     name: event.target.name.value,
-    timestamp: currentDate,
     comment: event.target.userComments.value,
   };
 
-  addNewComment(userInput);
+  postComments(userInput);
+
   inputBoxName.value = "";
   inputBoxComments.value = "";
 });
 
-/*
- * pushes new comment to existing array.
- */
+function getCurrentDate(date) {
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+  return `${month}/${day}/${year}`;
+}
+
+// /*
+//  * posts new comment to api.
+//  */
 // function addNewComment(userInput) {
-//   commentsArr.push(userInput);
-//   appendCommentObj();
+//   //post to api
+//   axios
+//     .post(commentsURL, userInput, {
+//       headers: { "Content-Type": "application/json" },
+//     })
+//     .then((responsePost) => {
+//       console.log(responsePost.data);
+//       // return response.data;
+//     });
+//   // .catch((error) => {
+//   //   console.log(error);
+//   // });
+
+//   // getData();
 // }
 
-//start of sprin-3
 //append array of comments from api to the comments container
 const appendComment = (apiCommentsObj) => {
+  // console.log(apiCommentsObj);
+
   // get the tasks container using querySelector
   const commentsContainer = document.querySelector(".comments-container");
   commentsContainer.innerHTML = "";
-  for (let i = apiCommentsObj.length - 1; i >= 0; i--) {
+  for (let i = 0; i < apiCommentsObj.length; i++) {
     renderTask(apiCommentsObj[i], commentsContainer);
   }
 };
+
+getComments();
