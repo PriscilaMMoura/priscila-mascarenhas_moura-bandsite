@@ -1,23 +1,41 @@
-const commentsArr = [
-  {
-    name: "Miles Acosta",
-    timestamp: "12/20/2020",
-    comment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-  {
-    name: "Emilie Beach",
-    timestamp: "01/09/2021",
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Connor Walton",
-    timestamp: "02/17/2021",
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-];
+/*
+ ** CALLS THE API
+ */
+const commentsURL =
+  "https://project-1-api.herokuapp.com/comments?api_key=a495a5fa-eb57-46a9-9925-55ba2b0508e3";
+axios.get(commentsURL).then((response) => {
+  //calls the render function and passes response.data as argument.
+  //response.data is an object.
+  console.log(response);
+  console.log(response.data);
+  appendComment(response.data);
+});
+// .catch((error) => {
+//   console.log(error);
+// });
+
+const commentsArr = [];
+
+// const commentsArr = [
+//   {
+//     name: "Miles Acosta",
+//     timestamp: "12/20/2020",
+//     comment:
+//       "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+//   },
+//   {
+//     name: "Emilie Beach",
+//     timestamp: "01/09/2021",
+//     comment:
+//       "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+//   },
+//   {
+//     name: "Connor Walton",
+//     timestamp: "02/17/2021",
+//     comment:
+//       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+//   },
+// ];
 
 /*
  * append array of comments to the page
@@ -111,20 +129,18 @@ commentsForm.addEventListener("submit", (event) => {
 /*
  * pushes new comment to existing array.
  */
-function addNewComment(userInput) {
-  commentsArr.push(userInput);
-  appendCommentObj();
-}
+// function addNewComment(userInput) {
+//   commentsArr.push(userInput);
+//   appendCommentObj();
+// }
 
-const appendCommentObj = () => {
+//start of sprin-3
+//append array of comments from api to the comments container
+const appendComment = (apiCommentsObj) => {
   // get the tasks container using querySelector
   const commentsContainer = document.querySelector(".comments-container");
   commentsContainer.innerHTML = "";
-  for (let i = commentsArr.length - 1; i >= 0; i--) {
-    renderTask(commentsArr[i], commentsContainer);
+  for (let i = apiCommentsObj.length - 1; i >= 0; i--) {
+    renderTask(apiCommentsObj[i], commentsContainer);
   }
 };
-
-appendCommentObj();
-
-//start of sprin-3

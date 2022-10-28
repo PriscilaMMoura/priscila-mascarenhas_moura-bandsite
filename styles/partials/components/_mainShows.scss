@@ -62,7 +62,7 @@
     }
   }
 
-  .hero__iframe {
+  &__iframe {
     width: 100%;
     @include breakpoint.medium {
       width: 75%;
