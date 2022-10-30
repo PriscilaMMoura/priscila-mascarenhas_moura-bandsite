@@ -1,35 +1,52 @@
-const shows = [
-  {
-    date: "Mon Sept 06 2021",
-    vanue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 21 2021",
-    vanue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Oct 15 2021",
-    vanue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 06 2021",
-    vanue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 26 2021",
-    vanue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 15 2021",
-    vanue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+// const shows = [
+//   {
+//     date: "Mon Sept 06 2021",
+//     vanue: "Ronald Lane",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Tue Sept 21 2021",
+//     vanue: "Pier 3 East",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Fri Oct 15 2021",
+//     vanue: "View Lounge",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Sat Nov 06 2021",
+//     vanue: "Hyatt Agency",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Fri Nov 26 2021",
+//     vanue: "Moscow Center",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Wed Dec 15 2021",
+//     vanue: "Press Club",
+//     location: "San Francisco, CA",
+//   },
+// ];
+
+const commentsURL =
+  "https://project-1-api.herokuapp.com/showdates?api_key=a495a5fa-eb57-46a9-9925-55ba2b0508e3";
+const getComments = () => {
+  axios
+    .get(commentsURL)
+    .then((response) => {
+      appendComment(response.data);
+
+      getEventListener();
+      // getArr(response.data);
+      // getArr(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
 
 const renderTask = (taskObj, showsContainer) => {
   //Parent detail
@@ -51,7 +68,8 @@ const renderTask = (taskObj, showsContainer) => {
   const dateText = document.createElement("span");
   dateText.classList.add("shows__copy-body-text");
   dateText.classList.add("shows__copy-body-text--date");
-  dateText.innerText = taskObj.date;
+  // dateText.innerText = new Date(taskObj.date);
+  dateText.innerText = getDate(new Date(taskObj.date));
   dateBlock.appendChild(dateText);
 
   //child venue
@@ -67,7 +85,7 @@ const renderTask = (taskObj, showsContainer) => {
 
   const venueText = document.createElement("span");
   venueText.classList.add("shows__copy-body-text");
-  venueText.innerText = taskObj.vanue;
+  venueText.innerText = taskObj.place;
   venueBlock.appendChild(venueText);
 
   //child
@@ -148,26 +166,41 @@ const showsContainer = document.createElement("div");
 showsContainer.classList.add("shows__container");
 showsSection.appendChild(showsContainer);
 
-const render = (showsDetails) => {
-  for (let i = 0; i < shows.length; i++) {
-    renderTask(shows[i], showsDetails);
+const appendComment = (apiShowsArr) => {
+  const showsDetails = document.querySelector(".shows__container");
+
+  const sortedByDate = apiShowsArr.sort((a, b) => a.date - b.date);
+  for (let i = 0; i < sortedByDate.length; i++) {
+    renderTask(sortedByDate[i], showsDetails);
   }
 };
 
-render(showsContainer);
+getComments();
 
-const allShowsDetails = document.querySelectorAll(".shows__details");
+const getEventListener = () => {
+  const allShowsDetails = document.querySelectorAll(".shows__details");
 
-for (let i = 0; i < allShowsDetails.length; i++) {
-  const eachShowsDetails = allShowsDetails[i];
+  for (let i = 0; i < allShowsDetails.length; i++) {
+    const eachShowsDetails = allShowsDetails[i];
+    eachShowsDetails.addEventListener("click", (event) => {
+      allShowsDetails.forEach((eachShowsDetails) => {
+        eachShowsDetails.classList.remove("shows__details--selected");
+        eachShowsDetails.classList.remove("nohover");
+      });
 
-  eachShowsDetails.addEventListener("click", (event) => {
-    allShowsDetails.forEach((eachShowsDetails) => {
-      eachShowsDetails.classList.remove("shows__details--selected");
-      eachShowsDetails.classList.remove("nohover");
+      eachShowsDetails.classList.add("shows__details--selected");
+      eachShowsDetails.classList.add("nohover");
     });
+  }
+};
 
-    eachShowsDetails.classList.add("shows__details--selected");
-    eachShowsDetails.classList.add("nohover");
-  });
+function getDate(date) {
+  const options = {
+    weekday: "short",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    day: "2-digit",
+  };
+  return date.toLocaleDateString("en-ca", options).replace(/,/g, "");
 }

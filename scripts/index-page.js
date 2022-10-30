@@ -3,14 +3,11 @@
  */
 const commentsURL =
   "https://project-1-api.herokuapp.com/comments?api_key=a495a5fa-eb57-46a9-9925-55ba2b0508e3";
-const getComments = (comm) => {
+const getComments = () => {
   axios
-    .get(commentsURL, comm)
+    .get(commentsURL)
     .then((response) => {
-      // console.log(response.data);
-      // console.log(comm);
       appendComment(response.data);
-      // addNewComment(comm);
     })
     .catch((error) => {
       console.log(error);
@@ -21,19 +18,22 @@ const postComments = (userInput) => {
   axios
     .post(commentsURL, userInput)
     .then((responsePost) => {
-      // console.log(responsePost.data);
-      getComments(responsePost.data);
-      // return responsePost.data;
+      getComments();
     })
     .catch((error) => {
       console.log(error);
     });
 };
 
-// function addNewComment(apiCommentsObj, newComment) {
-//   const newArr = apiCommentsObj.push(newComment);
-//   appendComment(newArr);
+// const localArray = [];
+
+// const getArr = (apiArray) =>{
+//   for(let i=0; i < apiArray.length; i++){
+
+//   }
 // }
+
+// console.log(getComments);
 
 /*
  * append array of comments to the page
@@ -126,35 +126,14 @@ function getCurrentDate(date) {
   return `${month}/${day}/${year}`;
 }
 
-// /*
-//  * posts new comment to api.
-//  */
-// function addNewComment(userInput) {
-//   //post to api
-//   axios
-//     .post(commentsURL, userInput, {
-//       headers: { "Content-Type": "application/json" },
-//     })
-//     .then((responsePost) => {
-//       console.log(responsePost.data);
-//       // return response.data;
-//     });
-//   // .catch((error) => {
-//   //   console.log(error);
-//   // });
-
-//   // getData();
-// }
-
 //append array of comments from api to the comments container
 const appendComment = (apiCommentsObj) => {
-  // console.log(apiCommentsObj);
-
   // get the tasks container using querySelector
   const commentsContainer = document.querySelector(".comments-container");
   commentsContainer.innerHTML = "";
+  const sortedByDate = apiCommentsObj.sort((a, b) => b.timestamp - a.timestamp);
   for (let i = 0; i < apiCommentsObj.length; i++) {
-    renderTask(apiCommentsObj[i], commentsContainer);
+    renderTask(sortedByDate[i], commentsContainer);
   }
 };
 
