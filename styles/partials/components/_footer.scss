@@ -2,7 +2,7 @@
 @use "../colors" as color;
 
 footer {
-  background-color: color.$bs-black;
+  background-color: color.$color-primary-dark;
   max-width: 100vw;
 }
 
@@ -29,8 +29,8 @@ footer {
   &__section-header-text {
     font-size: 1.5rem;
     line-height: 2rem;
-    font-weight: 700;
-    color: color.$white;
+    font-weight: 600;
+    color: color.$color-primary-ligthest;
     @include breakpoint.medium {
       font-size: 2.25rem;
       line-height: 2.75rem;
@@ -42,13 +42,19 @@ footer {
     @include breakpoint.medium {
       margin: 0 2rem;
     }
+    @include breakpoint.large {
+      margin: 0 3rem;
+    }
   }
 
   &__icon {
     width: auto;
-    height: 25px;
+    height: 23px;
+    @include breakpoint.medium {
+      height: 25px;
+    }
     &--middle {
-      margin: 0 1rem;
+      margin: 0 1.5rem;
       @include breakpoint.medium {
         margin: 0 1.5rem;
       }
@@ -76,8 +82,12 @@ footer {
     padding: 1rem 0;
     @include breakpoint.medium {
       padding: 1.5rem 0;
+      min-width: 12.313rem;
       &--middle {
-        margin: 0 3.5rem;
+        margin: 0 2.5rem;
+        @include breakpoint.large {
+          margin: 0 3.5rem;
+        }
       }
     }
   }
@@ -86,7 +96,7 @@ footer {
     font-size: 0.813rem;
     line-height: 1.125rem;
     font-weight: 400;
-    color: color.$white;
+    color: color.$color-primary-ligthest;
     @include breakpoint.medium {
       font-size: 0.875rem;
       line-height: 1.25rem;
@@ -102,7 +112,7 @@ footer {
       }
     }
     &--link {
-      color: color.$white;
+      color: color.$color-primary-ligthest;
       text-decoration: none;
     }
   }
@@ -125,7 +135,7 @@ footer {
     font-size: 0.625rem;
     line-height: 1.25rem;
     font-weight: 400;
-    color: color.$white;
+    color: color.$color-primary-ligthest;
     @include breakpoint.medium {
       font-size: 0.75rem;
       line-height: 1.25rem;

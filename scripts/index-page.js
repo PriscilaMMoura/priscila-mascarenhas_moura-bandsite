@@ -1,6 +1,4 @@
-/*
- ** CALLS THE API
- */
+//gets data from api
 const commentsURL =
   "https://project-1-api.herokuapp.com/comments?api_key=a495a5fa-eb57-46a9-9925-55ba2b0508e3";
 const getComments = () => {
@@ -14,6 +12,7 @@ const getComments = () => {
     });
 };
 
+//sends data to api
 const postComments = (userInput) => {
   axios
     .post(commentsURL, userInput)
@@ -25,20 +24,7 @@ const postComments = (userInput) => {
     });
 };
 
-// const localArray = [];
-
-// const getArr = (apiArray) =>{
-//   for(let i=0; i < apiArray.length; i++){
-
-//   }
-// }
-
-// console.log(getComments);
-
-/*
- * append array of comments to the page
- */
-
+//renders api data to the browser.
 const renderTask = (commentObj, tasksListContainer) => {
   const comments = document.createElement("div");
   comments.classList.add("comments");
@@ -75,9 +61,7 @@ const renderTask = (commentObj, tasksListContainer) => {
   commentsTextBlock.appendChild(commentsContent);
 };
 
-/**
- * Submit comment event.
- */
+// event listener to submit new comment made by the user
 const commentsForm = document.getElementById("comments-form");
 commentsForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -113,12 +97,14 @@ commentsForm.addEventListener("submit", (event) => {
     comment: event.target.userComments.value,
   };
 
+  //calls function to post comment to api
   postComments(userInput);
 
   inputBoxName.value = "";
   inputBoxComments.value = "";
 });
 
+//function to format the date data from them api.
 function getCurrentDate(date) {
   const day = date.getDate();
   const month = date.getMonth() + 1;
@@ -128,13 +114,14 @@ function getCurrentDate(date) {
 
 //append array of comments from api to the comments container
 const appendComment = (apiCommentsObj) => {
-  // get the tasks container using querySelector
   const commentsContainer = document.querySelector(".comments-container");
   commentsContainer.innerHTML = "";
+  //sorts data so the newest comment can be displayed on top of the list.
   const sortedByDate = apiCommentsObj.sort((a, b) => b.timestamp - a.timestamp);
   for (let i = 0; i < apiCommentsObj.length; i++) {
     renderTask(sortedByDate[i], commentsContainer);
   }
 };
 
+//calls function to call the api.
 getComments();

@@ -121,7 +121,7 @@
 }
 @media only screen and (min-width: 768px) {
   .main-container {
-    padding: 3rem 1rem 2.25rem 1rem;
+    padding: 3rem 2.25rem 2.25rem 2.5rem;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -347,6 +347,7 @@
     flex-direction: row;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+    padding-bottom: 1rem;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -374,7 +375,7 @@
 .shows__copy-body-text--header-small {
   color: #afafaf;
   font-weight: 600;
-  padding-bottom: 4px;
+  padding-bottom: 0.25rem;
 }
 @media only screen and (min-width: 768px) {
   .shows__copy-body-text--header-small {
@@ -464,7 +465,7 @@ footer {
 .footer-header__section-header-text {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #ffffff;
 }
 @media only screen and (min-width: 768px) {
@@ -481,12 +482,22 @@ footer {
     margin: 0 2rem;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .footer-header__social {
+    margin: 0 3rem;
+  }
+}
 .footer-header__icon {
   width: auto;
-  height: 25px;
+  height: 23px;
+}
+@media only screen and (min-width: 768px) {
+  .footer-header__icon {
+    height: 25px;
+  }
 }
 .footer-header__icon--middle {
-  margin: 0 1rem;
+  margin: 0 1.5rem;
 }
 @media only screen and (min-width: 768px) {
   .footer-header__icon--middle {
@@ -518,7 +529,13 @@ footer {
 @media only screen and (min-width: 768px) {
   .footer-body__item {
     padding: 1.5rem 0;
+    min-width: 12.313rem;
   }
+  .footer-body__item--middle {
+    margin: 0 2.5rem;
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 1280px) {
   .footer-body__item--middle {
     margin: 0 3.5rem;
   }

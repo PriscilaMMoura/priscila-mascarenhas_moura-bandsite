@@ -4,7 +4,7 @@
 /* styles for header for mobile */
 
 .nav-bar-container {
-  background-color: color.$bs-black;
+  background-color: color.$color-primary-dark;
   max-width: 100vw;
 }
 
@@ -61,7 +61,7 @@
     font-size: 0.813rem;
     line-height: 1.125rem;
     font-weight: 400;
-    color: color.$mercury;
+    color: color.$color-secondary-light;
     text-align: center;
     margin: 0;
     padding: 1rem;
@@ -78,14 +78,14 @@
 
   &__list-item--current-page {
     font-weight: 700;
-    border-bottom: 0.188rem solid color.$white;
+    border-bottom: 0.188rem solid color.$color-primary-ligthest;
   }
 
   &__list-item--inactive-page {
     transition: all 0.2s;
     &:hover {
-      color: color.$white;
-      border-bottom: 0.188rem solid color.$white;
+      color: color.$color-primary-ligthest;
+      border-bottom: 0.188rem solid color.$color-primary-ligthest;
     }
   }
 }

@@ -2,7 +2,7 @@
 @use "../colors" as color;
 
 .main-container {
-  background-color: color.$white;
+  background-color: color.$color-primary-ligthest;
   max-width: 100vw;
 }
 
@@ -13,8 +13,8 @@
   flex-direction: column;
   background: linear-gradient(
       to bottom,
-      rgba(color.$bs-black, 0.5),
-      rgba(color.$bs-black, 0.5)
+      rgba(color.$color-primary-dark, 0.5),
+      rgba(color.$color-primary-dark, 0.5)
     ),
     url(../assets/images/hero-bio.jpg);
   background-size: cover;
@@ -26,7 +26,7 @@
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 700;
-    color: color.$white;
+    color: color.$color-primary-ligthest;
     margin: auto 1rem;
 
     @include breakpoint.medium {
@@ -74,7 +74,7 @@
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 700;
-    color: color.$bs-black;
+    color: color.$color-primary-dark;
     @include breakpoint.medium {
       padding-bottom: 2.25rem;
       font-size: 2.25rem;
@@ -86,7 +86,7 @@
     font-size: 0.813rem;
     line-height: 1.125rem;
     font-weight: 400;
-    color: color.$bs-black;
+    color: color.$color-primary-dark;
     @include breakpoint.medium {
       font-size: 0.875rem;
       line-height: 1.375rem;
@@ -133,7 +133,7 @@
     font-size: 0.875rem;
     line-height: 1.375rem;
     font-weight: 600;
-    color: color.$bs-black;
+    color: color.$color-primary-dark;
     margin: 0;
     padding-top: 1.5rem;
     @include breakpoint.medium {
@@ -155,7 +155,7 @@
 }
 
 .photo-gallery-container {
-  background-color: color.$alabaster;
+  background-color: color.$color-secondary-lightest;
   max-width: 100vw;
 }
 .photo-gallery {
@@ -175,7 +175,7 @@
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 700;
-    color: color.$bs-black;
+    color: color.$color-primary-dark;
     margin: 0;
     padding-bottom: 1rem;
     @include breakpoint.medium {
@@ -254,7 +254,7 @@
 }
 
 .conversation-container {
-  background-color: color.$white;
+  background-color: color.$color-primary-ligthest;
   padding: 1.5rem 1rem 1rem 1rem;
   @include breakpoint.medium {
     padding: 3rem 2.25rem 2.25rem 2.25rem;
@@ -274,7 +274,7 @@
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
-  color: color.$bs-black;
+  color: color.$color-primary-dark;
   @include breakpoint.medium {
     padding-bottom: 2.25rem;
     font-size: 2.25rem;
@@ -319,7 +319,7 @@
     font-size: 0.625rem;
     line-height: 1.25rem;
     font-weight: 700;
-    color: color.$silver;
+    color: color.$color-primary-light;
     padding-bottom: 0.25rem;
     @include breakpoint.medium {
       font-size: 0.75rem;
@@ -328,16 +328,16 @@
   &__field-box {
     width: 100%;
     border-radius: 0.25rem;
-    border: 0.063rem solid color.$mercury;
+    border: 0.063rem solid color.$color-secondary-light;
     padding: 0.75rem;
     font-size: 0.813rem;
     font-weight: 400;
-    color: color.$bs-black;
-    background-color: color.$alabaster;
+    color: color.$color-primary-dark;
+    background-color: color.$color-secondary-lightest;
     resize: none;
     &:focus {
       outline: none;
-      border: 0.063rem solid color.$bs-black;
+      border: 0.063rem solid color.$color-primary-dark;
     }
     @include breakpoint.medium {
       font-size: 0.875rem;
@@ -357,8 +357,8 @@
   }
 
   &__button {
-    background-color: color.$bs-black;
-    color: color.$white;
+    background-color: color.$color-primary-dark;
+    color: color.$color-primary-ligthest;
     font-weight: 600;
     text-decoration: none;
     text-align: center;
@@ -377,13 +377,13 @@
     }
 
     &:hover {
-      background-color: color.$bs-dark-black;
+      background-color: color.$color-secondary-dark;
     }
   }
 }
 
 .comments-container {
-  border-top: solid 0.063rem color.$mercury;
+  border-top: solid 0.063rem color.$color-secondary-light;
   @include breakpoint.medium {
     margin-left: 3.5rem;
     margin-right: 3.5rem;
@@ -394,7 +394,7 @@
   }
 }
 .comments {
-  border-bottom: solid 0.063rem color.$mercury;
+  border-bottom: solid 0.063rem color.$color-secondary-light;
   display: flex;
 
   &__avatar-container {
@@ -411,7 +411,7 @@
     max-height: 2.25rem;
     border-radius: 50%;
 
-    background-color: color.$mercury;
+    background-color: color.$color-secondary-light;
   }
 
   &__text-container {
@@ -431,7 +431,7 @@
     font-size: 0.813rem;
     line-height: 1.125rem;
     font-weight: 400;
-    color: color.$bs-black;
+    color: color.$color-primary-dark;
     overflow-wrap: anywhere;
     @include breakpoint.medium {
       font-size: 0.875rem;
@@ -442,7 +442,7 @@
     }
     &--date {
       margin-left: auto;
-      color: color.$silver;
+      color: color.$color-primary-light;
     }
   }
 }

@@ -1,53 +1,19 @@
-// const shows = [
-//   {
-//     date: "Mon Sept 06 2021",
-//     vanue: "Ronald Lane",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Tue Sept 21 2021",
-//     vanue: "Pier 3 East",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Fri Oct 15 2021",
-//     vanue: "View Lounge",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Sat Nov 06 2021",
-//     vanue: "Hyatt Agency",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Fri Nov 26 2021",
-//     vanue: "Moscow Center",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Wed Dec 15 2021",
-//     vanue: "Press Club",
-//     location: "San Francisco, CA",
-//   },
-// ];
-
-const commentsURL =
+//gets data from api
+const showsDataURL =
   "https://project-1-api.herokuapp.com/showdates?api_key=a495a5fa-eb57-46a9-9925-55ba2b0508e3";
-const getComments = () => {
+const getShowsData = () => {
   axios
-    .get(commentsURL)
+    .get(showsDataURL)
     .then((response) => {
-      appendComment(response.data);
-
+      appendShowsData(response.data);
       getEventListener();
-      // getArr(response.data);
-      // getArr(response.data);
     })
     .catch((error) => {
       console.log(error);
     });
 };
 
+//renders api data to the browser sorted by date.
 const renderTask = (taskObj, showsContainer) => {
   //Parent detail
   const showsDetails = document.createElement("div");
@@ -68,7 +34,6 @@ const renderTask = (taskObj, showsContainer) => {
   const dateText = document.createElement("span");
   dateText.classList.add("shows__copy-body-text");
   dateText.classList.add("shows__copy-body-text--date");
-  // dateText.innerText = new Date(taskObj.date);
   dateText.innerText = getDate(new Date(taskObj.date));
   dateBlock.appendChild(dateText);
 
@@ -88,7 +53,7 @@ const renderTask = (taskObj, showsContainer) => {
   venueText.innerText = taskObj.place;
   venueBlock.appendChild(venueText);
 
-  //child
+  //child locations
   const locationBlock = document.createElement("div");
   locationBlock.classList.add("shows__locations");
   showsDetails.appendChild(locationBlock);
@@ -112,6 +77,7 @@ const renderTask = (taskObj, showsContainer) => {
   showsDetails.appendChild(showsButton);
 };
 
+//renders section header for all screen sizes and subheaders for screen medium and large sizes.
 const showsSection = document.querySelector(".shows");
 
 const sectionHeader = document.createElement("h4");
@@ -166,17 +132,19 @@ const showsContainer = document.createElement("div");
 showsContainer.classList.add("shows__container");
 showsSection.appendChild(showsContainer);
 
-const appendComment = (apiShowsArr) => {
+//loops through the api and sorts its elements by date to pass data as arguement to be rendered on the browser.
+const appendShowsData = (apiShowsArr) => {
   const showsDetails = document.querySelector(".shows__container");
-
+  //sorts data so the concert with the nearest date can be displayed on top of the list.
   const sortedByDate = apiShowsArr.sort((a, b) => a.date - b.date);
   for (let i = 0; i < sortedByDate.length; i++) {
     renderTask(sortedByDate[i], showsDetails);
   }
 };
+//calls function to call the api.
+getShowsData();
 
-getComments();
-
+//event listener so the rows can change background color when the user clicks on them.
 const getEventListener = () => {
   const allShowsDetails = document.querySelectorAll(".shows__details");
 
@@ -194,6 +162,7 @@ const getEventListener = () => {
   }
 };
 
+//function to format the date data from them api.
 function getDate(date) {
   const options = {
     weekday: "short",

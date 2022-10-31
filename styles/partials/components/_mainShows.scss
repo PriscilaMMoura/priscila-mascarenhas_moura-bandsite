@@ -2,10 +2,10 @@
 @use "../colors" as color;
 
 .main-container {
-  background-color: color.$white;
+  background-color: color.$color-primary-ligthest;
   padding: 1.5rem 1rem 1rem 1rem;
   @include breakpoint.medium {
-    padding: 3rem 1rem 2.25rem 1rem;
+    padding: 3rem 2.25rem 2.25rem 2.5rem;
   }
 
   @include breakpoint.large {
@@ -23,8 +23,8 @@
   flex-direction: column;
   background: linear-gradient(
       to bottom,
-      rgba(color.$bs-black, 0.5),
-      rgba(color.$bs-black, 0.5)
+      rgba(color.$color-primary-dark, 0.5),
+      rgba(color.$color-primary-dark, 0.5)
     ),
     url(../assets/images/hero-shows.jpg);
   background-size: cover;
@@ -76,7 +76,7 @@
     font-size: 1rem;
     line-height: 2rem;
     font-weight: 600;
-    color: color.$white;
+    color: color.$color-primary-ligthest;
     padding-bottom: 1rem;
 
     @include breakpoint.medium {
@@ -90,7 +90,7 @@
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 700;
-    color: color.$white;
+    color: color.$color-primary-ligthest;
     padding-bottom: 1rem;
     @include breakpoint.medium {
       font-size: 3.75rem;
@@ -112,7 +112,7 @@
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 700;
-    color: color.$bs-black;
+    color: color.$color-primary-dark;
 
     @include breakpoint.medium {
       padding-bottom: 2.25rem;
@@ -158,7 +158,7 @@
   }
 
   &__details {
-    border-bottom: 0.063rem solid color.$mercury;
+    border-bottom: 0.063rem solid color.$color-secondary-light;
     padding: 1rem 0;
     @include breakpoint.medium {
       display: flex;
@@ -169,11 +169,11 @@
       padding-right: 1.25rem;
 
       &--selected {
-        background-color: color.$mercury;
+        background-color: color.$color-secondary-light;
       }
 
       &:not(.nohover):hover {
-        background-color: color.$alabaster;
+        background-color: color.$color-secondary-lightest;
       }
     }
     @include breakpoint.large {
@@ -219,6 +219,7 @@
       flex-direction: row;
       padding-left: 1.25rem;
       padding-right: 1.25rem;
+      padding-bottom: 1rem;
     }
     @include breakpoint.large {
       padding-left: 0;
@@ -231,7 +232,7 @@
     font-size: 0.813rem;
     line-height: 1.125rem;
     font-weight: 400;
-    color: color.$bs-black;
+    color: color.$color-primary-dark;
 
     @include breakpoint.medium {
       font-size: 0.875rem;
@@ -241,9 +242,9 @@
       font-weight: 700;
     }
     &--header-small {
-      color: color.$silver;
+      color: color.$color-primary-light;
       font-weight: 600;
-      padding-bottom: 4px;
+      padding-bottom: 0.25rem;
       @include breakpoint.medium {
         display: none;
       }
@@ -264,7 +265,7 @@
     &--header-mid {
       font-size: 0.625rem;
       line-height: 1.25rem;
-      color: color.$silver;
+      color: color.$color-primary-light;
       font-weight: 600;
 
       @include breakpoint.medium {
@@ -276,8 +277,8 @@
   }
 
   &__button {
-    background-color: color.$bs-black;
-    color: color.$white;
+    background-color: color.$color-primary-dark;
+    color: color.$color-primary-ligthest;
     font-weight: 600;
     text-decoration: none;
     text-align: center;
@@ -295,7 +296,7 @@
       margin: 0;
     }
     &:hover {
-      background-color: color.$bs-dark-black;
+      background-color: color.$color-secondary-dark;
     }
   }
 }
